@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    box-sizing: border-box;
+}
+
+#header {
+    /* display: inline-block; */
+    position: fixed;
+    width: 100vw;
+    height: 14vh;
+    /* left: 0px; */
+    top: 0px;
+    background: rgba(255, 122, 0);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Nunito;
+    font-style: normal;
+}
+
+#contenedor_logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 850px;
+    height: 80px;
+    left: 100px;
+    top: 8px;
+}
+
+#logo_img {
+    width: 110px;
+    height: 70px;
+    left: 0px;
+    top: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-menu {
+    margin-left: 30px;
+}
+
+.nav-menu li {
+    display: inline-block;
+    left: 78.59%;
+    right: 0%;
+    top: 37.5%;
+    bottom: 37.5%;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    color: #010101;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 4;
+    flex-grow: 0;
+    margin: 0px 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    background-image: linear-gradient(#40b840, #40b840);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #fff;
+    background-size: 100% 2px;
+}
+
+#btn_inisesion {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 203px;
+    height: 42px;
+    left: calc(50% - 203px/2 + 481px);
+    top: calc(50% - 42px/2);
+    background: #FFFFFF;
+    border: none;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    padding: 0px 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#btn_inisesion:hover {
+    background: #40b840;
+    color: white;
+}
+
+
+/* Para todas las secciones */
+
+.secciones {
+    width: 100%;
+    height: 86vh;
+    margin-bottom: 0;
+}
+
+#hero {
+    margin-top: 14vh;
+    background-size: cover;
+    background-image: url(img/fondo.jpg);
+}
+
+.section-contenedor {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+}
+
+#hero-contenedor-text {
+    margin-top: 145px;
+    margin-left: 64px;
+    width: 440px;
+    height: 275px;
+    background: rgba(196, 196, 196, 0.75);
+    /* box-shadow: 4px 4px rgba(0, 0, 0, 0.5); */
+    /* filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25)); */
+}
+
+#petworld {
+    width: 320px;
+    margin-top: 30px;
+}
+
+#slogan {
+    display: block;
+    margin-left: 39px;
+    margin-top: 20px;
+}
+
+#btn-ver-mas {
+    background-color: rgba(255, 122, 0);
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 157px;
+    height: 46px;
+    border: none;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#btn-ver-mas:hover {
+    background: #40b840;
+    color: white;
+}
+
+#img_conocenos {
+    width: 368px;
+    height: 59px;
+}
+
+
+/* Seccion Conocenos */
+
+#conocenos {
+    margin-top: 20px;
+}
+
+.columna1 {
+    float: left;
+}
+
+.columna2 {
+    float: right;
+}
+
+.subrayado {
+    margin-top: 10px;
+    width: 550px;
+    border: 5px solid #FF5C00;
+    border-radius: 0px 5px 5px 0px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#descripcion {
+    width: 391px;
+    height: 208px;
+    margin-top: 20px;
+    margin-left: 78px;
+    font-family: 'Abel', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+#img_about_conocenos {
+    width: 337px;
+    height: 198px;
+    margin-left: 105px;
+    margin-bottom: 25px;
+    background: url("img/about_img.png");
+    background-size: cover;
+}
+
+
+/* Servicios */
+
+
+/* 
+.servicios-contenedor {
+    width: 99vw;
+} */
+
+#img_servicios {
+    width: 590px;
+    height: 50px;
+}
+
+
+/* 
+#puntos {
+    position: absolute;
+    width: 98vw;
+}
+
+#poligono {
+    position: absolute;
+    width: 98vw;
+} */
+
+#lista_servicios {
+    margin-top: 24px;
+    width: 98.5vw;
+    text-align: center;
+}
+
+#lista_servicios img {
+    /* width: 98vw; */
+    width: 98.792vw;
+    height: 420px;
+}
+
+#flecha {
+    background-color: rgba(255, 122, 0);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+}
+
+#flecha img {
+    width: 15.5px;
+    height: 15.5px;
+}
