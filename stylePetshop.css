@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css?family=Germania+One");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    box-sizing: border-box;
+}
+
+#header {
+    /* display: inline-block; */
+    position: fixed;
+    width: 100vw;
+    height: 14vh;
+    /* left: 0px; */
+    top: 0px;
+    background: rgba(255, 122, 0);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Nunito;
+    font-style: normal;
+    z-index: 1;
+}
+
+#contenedor_logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 850px;
+    height: 80px;
+    left: 100px;
+    top: 8px;
+}
+
+#logo_img {
+    width: 115px;
+    height: 70px;
+    left: 0px;
+    top: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-menu {
+    margin-left: 30px;
+}
+
+.nav-menu li {
+    /* position: static; */
+    display: inline-block;
+    left: 78.59%;
+    right: 0%;
+    top: 37.5%;
+    bottom: 37.5%;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 20px;
+    /* identical to box height, or 105% */
+    letter-spacing: 2px;
+    /* Black/100% */
+    color: #010101;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 4;
+    flex-grow: 0;
+    margin: 0px 20px;
+}
+
+#btn_inisesion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 203px;
+    height: 42px;
+    left: calc(50% - 203px/2 + 481px);
+    top: calc(50% - 42px/2 + 2.5px);
+    background: #FFFFFF;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    /* position: static; */
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #000000;
+    padding: 0px 10px;
+    cursor: pointer;
+    transition: 0.4s; 
+}
+
+#btn_inisesion:hover {
+    border-color: #40b840;
+    background: #40b840;
+    color: white;
+}
+
+#noh{
+    position: relative;
+    margin-top: 14vh;
+height: 86vh;
+}
+
+h1{
+    position: absolute;
+    width: 459px;
+    height: 36px;
+    left: 194px;
+    top: 53px;
+    
+    font-family: Germania One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin: 0px;
+    color: #402F20;
+}
+
+rect{
+        position: absolute;
+        width: 595px;
+        height: 68px;
+        left: 0px;
+        top: 34px;
+        background: rgba(255, 168, 38, 0.9);
+        border-radius: 0px 15px 0px 0px;
+        filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.25));
+}
+    
+
+img.bone{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 36px;
+            top: 56px;
+}
+
+p.prn{
+position: absolute;
+width: 737px;
+height: 206px;
+left: 83px;
+top: 222px;
+
+font-family: DM Sans;
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 17px;
+/* or 113% */
+
+display: flex;
+align-items: center;
+text-align: justify;
+letter-spacing: 0.04em;
+
+color: #000000;
+}
+
+t1{
+    position: absolute;
+width: 338px;
+height: 26px;
+left: 147px;
+top: 137px;
+
+font-family: DM Sans;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 26px;
+/* identical to box height */
+
+letter-spacing: 0.12em;
+
+color: #FF7A00;
+}
+
+t2{
+    position: absolute;
+width: 383px;
+height: 29px;
+left: 148px;
+top: 166px;
+
+font-family: DM Sans;
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 29px;
+/* identical to box height */
+
+letter-spacing: 0.12em;
+
+color: #000000;
+
+}
+
+img.icprod{
+    position: absolute;
+width: 54px;
+height: 54px;
+left: 81px;
+top: 142px;
+}
+
+img.bck{
+    position: absolute;
+width: 305px;
+height: 356px;
+left: 980px;
+top: 151px;
+}
+
+img.pets{
+    position: absolute;
+    width: 422px;
+    height: 299px;
+    left: 914px;
+    top: 137px;    
+}
+
+div.filtro{
+    position: absolute;
+    width: 1200px;
+height: 64px;
+left: calc(50% - 1200px/2 + 8.5px);
+top: 533px;
+
+background: #402F20;
+border: 0.5px solid rgba(0, 0, 0, 0.3);
+box-sizing: border-box;
+border-radius: 7px;
+}
+
+#selCat{
+    position: absolute;
+width: 255px;
+height: 35px;
+left: 0px;
+bottom: 0px;
+top: 13px;
+background: #FFFFFF;
+border-radius: 3px;
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 25px;
+}
+
+#selBrand{
+    position: absolute;
+    width: 254px;
+    height: 35px;
+    left: 280px;
+    bottom: 0px;
+    top: 13px;
+    background: #FFFFFF;
+    border-radius: 3px;
+    
+    /* Inside Auto Layout */
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 25px;
+}
+
+#selPrice{
+    position: absolute;
+width: 254px;
+height: 35px;
+left: 559px;
+bottom: 0px;
+top:13px;
+background: #FFFFFF;
+border-radius: 3px;
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;
+margin: 0px 25px;
+}
+
+ord{
+    position: absolute;
+    width: 1200px;
+    height: 30px;
+    left: 91px;
+    top: 624px; 
+}
+
+ordr{
+    position: absolute;
+left: 80%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+border: 0.5px solid rgba(0, 0, 0, 0.5);
+box-sizing: border-box;
+border-radius: 5px;
+}
+
+txfind{
+    position: absolute;
+width: 902px;
+height: 21px;
+left: 0px;
+top: 4.5px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 21px;
+/* identical to box height */
+
+
+color: rgba(0, 0, 0, 0.5);
+
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 0;
+flex-grow: 1;
+margin: 0px 12px;
+}
