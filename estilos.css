@@ -6,11 +6,9 @@
 }
 
 #header {
-    /* display: inline-block; */
     position: fixed;
     width: 100vw;
     height: 14vh;
-    /* left: 0px; */
     top: 0px;
     background: rgba(255, 122, 0);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -58,7 +56,6 @@ a {
     line-height: 20px;
     letter-spacing: 2px;
     color: #010101;
-    /* Inside Auto Layout */
     flex: none;
     order: 4;
     flex-grow: 0;
@@ -111,7 +108,14 @@ a {
 .secciones {
     width: 100%;
     height: 86vh;
-    margin-bottom: 0;
+    margin-bottom: 30px;
+}
+
+
+/* Para todos los titulos */
+
+.titulos {
+    margin-top: 10px;
 }
 
 #hero {
@@ -121,9 +125,10 @@ a {
 }
 
 .section-contenedor {
+    padding: 10px;
+    height: 100%;
     display: flex;
     justify-content: left;
-    align-items: center;
     text-align: center;
 }
 
@@ -133,8 +138,6 @@ a {
     width: 440px;
     height: 275px;
     background: rgba(196, 196, 196, 0.75);
-    /* box-shadow: 4px 4px rgba(0, 0, 0, 0.5); */
-    /* filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25)); */
 }
 
 #petworld {
@@ -220,28 +223,10 @@ a {
 
 /* Servicios */
 
-
-/* 
-.servicios-contenedor {
-    width: 99vw;
-} */
-
 #img_servicios {
     width: 590px;
     height: 50px;
 }
-
-
-/* 
-#puntos {
-    position: absolute;
-    width: 98vw;
-}
-
-#poligono {
-    position: absolute;
-    width: 98vw;
-} */
 
 #lista_servicios {
     margin-top: 24px;
@@ -267,4 +252,59 @@ a {
 #flecha img {
     width: 15.5px;
     height: 15.5px;
+}
+
+
+/* Contactanos */
+
+.servicios-contenedor {
+    height: 100%;
+}
+
+#img_contactanos {
+    margin-top: 20px;
+}
+
+#contact {
+    margin-bottom: 0;
+}
+
+#descripcion_contact {
+    margin: 20px;
+    height: 400px;
+    padding-top: 10px;
+}
+
+.text_contact {
+    margin: 20px;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 27px;
+    line-height: 35px;
+    text-align: center;
+    color: #000000;
+}
+
+#contact_1 {
+    margin-top: 30px;
+}
+
+#huellitas {
+    position: absolute;
+    right: 1px;
+    top: 1960px;
+}
+
+#localizacion {
+    position: absolute;
+    width: 560px;
+    right: 100px;
+    top: 1960px;
+}
+
+#col1-contactanos {
+    width: 40vw;
+}
+
+#col2-contactanos {
+    width: 58vw;
 }
