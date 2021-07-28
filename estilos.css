@@ -14,6 +14,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Nunito;
     font-style: normal;
+    z-index: 10;
 }
 
 #contenedor_logo {
@@ -100,6 +101,7 @@ a {
 #btn_inisesion:hover {
     background: #40b840;
     color: white;
+    transform: scale(0.99);
 }
 
 
@@ -154,21 +156,17 @@ a {
 #btn-ver-mas {
     background-color: rgba(255, 122, 0);
     margin-top: 20px;
-    justify-content: center;
-    align-items: center;
     width: 157px;
     height: 46px;
     border: none;
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
-    padding: 5px 10px;
     cursor: pointer;
     transition: 0.4s;
 }
 
 #btn-ver-mas:hover {
     background: #40b840;
-    color: white;
 }
 
 #img_conocenos {
@@ -191,6 +189,11 @@ a {
     float: right;
 }
 
+#col2-conocenos {
+    width: 57.4vw;
+    padding-top: 120px;
+}
+
 .subrayado {
     margin-top: 10px;
     width: 550px;
@@ -200,15 +203,13 @@ a {
 }
 
 #descripcion {
-    width: 391px;
-    height: 208px;
+    width: 400px;
+    height: 220px;
     margin-top: 20px;
     margin-left: 78px;
     font-family: 'Abel', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 18px;
+    font-size: 18px;
+    line-height: 19px;
 }
 
 #img_about_conocenos {
@@ -218,14 +219,106 @@ a {
     margin-bottom: 25px;
     background: url("img/about_img.png");
     background-size: cover;
+    box-shadow: 1.5px 1.5px 8px 1.5px #999;
+}
+
+
+/* Cards */
+
+#equipo {
+    position: absolute;
+    width: 368px;
+    height: 63px;
+    left: calc(50% - 368px/2 + 280px);
+    top: 750px;
+    font-family: Love Ya Like A Sister;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 43px;
+    /* or 86% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#fondo-puntos {
+    position: absolute;
+    transform: scale(0.95);
+    top: 899px;
+    left: 538px;
+}
+
+.wrapper .outer {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper .card {
+    background: #FFAB26;
+    margin: 10px 10px 20px 80px;
+    width: 260px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    justify-content: center;
+    border-radius: 10px 20px 20px 10px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card .content {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper .card .img {
+    height: 110px;
+    width: 110px;
+    position: absolute;
+    left: -60px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
+.card .img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card .details {
+    margin-left: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+}
+
+.details span {
+    color: #fff;
+    font-style: normal;
+    line-height: 27px;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 
 /* Servicios */
 
 #img_servicios {
-    width: 590px;
-    height: 50px;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 500px;
 }
 
 #lista_servicios {
@@ -297,7 +390,7 @@ a {
 #localizacion {
     position: absolute;
     width: 560px;
-    right: 100px;
+    right: 90px;
     top: 1960px;
 }
 
