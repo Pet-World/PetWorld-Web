@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetWorld</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/estilosRegistro.css" />
+    <!-- <link rel="stylesheet" href="./../static/css/style.css"> -->
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Red+Rose&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <nav class="navegacion" id="nav-menu-container">
+            <div id="contenedor_logo">
+                <img id="logo_img" src="img/logo.png" alt="logo" />
+
+                <ul class="nav-menu">
+                    <li><a href="#hero">INICIO</a></li>
+                    <li><a href="#about">CONÓCENOS</a></li>
+                    <li><a href="#servicios">SERVICIOS</a></li>
+                    <li><a href="#contact">CONTÁCTANOS</a></li>
+                </ul>
+            </div>
+            <button id="btn_inisesion">INICIAR SESION</button>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div>
+            <h1 id="bienvenida">¡Te damos la bienvenida!</h1>
+            <hr id="linea" />
+        </div>
+
+        <section class="section">
+            <div class="usuario">
+                <h4 id="lblDatosde">
+                    ------------------------- Datos de usuario:
+                    -------------------------
+                </h4>
+                <div class="fila">
+                    <form class="campo" style="width: 50%">
+                        <input type="text" required />
+                        <label class="datos">
+                            <span class="nombre_campo">Nombre</span>
+                        </label>
+                    </form>
+
+                    <form class="campo" style="width: 50%">
+                        <input type="text" required />
+                        <label class="datos">
+                            <span class="nombre_campo">Apellidos</span>
+                        </label>
+                    </form>
+                </div>
+
+                <div class="fila">
+                    <form class="campo" style="width: 25%">
+                        <input type="text" required />
+                        <label class="datos">
+                            <span class="nombre_campo">DNI</span>
+                        </label>
+                    </form>
+
+                    <form class="campo" style="width: 25%">
+                        <input type="text" required />
+                        <label class="datos">
+                            <span class="nombre_campo">Celular</span>
+                        </label>
+                    </form>
+
+                    <form class="campo" style="width: 50%">
+                        <input type="text" required />
+                        <label class="datos">
+                            <span class="nombre_campo">Email</span>
+                        </label>
+                    </form>
+                </div>
+
+                <div class="fila">
+                    <form class="campo" style="width: 30%">
+                        <input type="text" required />
+                        <label class="datos">
+                            <span class="nombre_campo">Distrito</span>
+                        </label>
+                    </form>
+
+                    <form class="campo" style="width: 70%">
+                        <input type="text" required />
+                        <label class="datos">
+                            <span class="nombre_campo">Dirección</span>
+                        </label>
+                    </form>
+                </div>
+
+                <div class="fila">
+                    <form class="campo" style="width: 40%">
+                        <input type="text" required />
+                        <label class="datos">
+                            <span class="nombre_campo">Contraseña</span>
+                        </label>
+                    </form>
+
+                    <div id="lblCantMascotas">Cantidad de mascotas:</div>
+                    <form class="campo" style="width: 7%">
+                        <input type="number" required />
+                        <label class="datos">
+                            <span class="nombre_campo"></span>
+                        </label>
+                    </form>
+                </div>
+
+
+                <button id="btnSiguiente">
+                    <h4 id="lblSiguiente">Siguiente</h4>
+                    <img src="img/flechaSig.png" alt="flecha" />
+                </button>
+
+            </div>
+
+            <hr color="#EBEBEB" />
+
+            <div class="mascota">
+                <h4 id="lblDatosde">
+                    --------------- Datos de tu(s) mascota(s): ---------------
+                </h4>
+                <div class="fila">
+                    <form class="campo" style="width: 40%">
+                        <input type="text" required />
+                        <label class="datos">
+                            <span class="nombre_campo">Nombre</span>
+                        </label>
+                    </form>
+
+                    <div id="lblEdad">Edad (en meses):</div>
+                    <form class="campo" style="width: 15%">
+                        <input type="number" required />
+                        <label class="datos">
+                            <span class="nombre_campo"></span>
+                        </label>
+                    </form>
+                </div>
+
+                <div class="fila">
+                    <div id="lblTipoMascota">Tipo de Mascota:</div>
+                    <div class="opciones">
+                        <select name="tipo" style="width: 100%">
+                            <option>Perro</option>
+                            <option>Gato</option>
+                        </select>
+                    </div>
+
+                    <form class="campo" style="width: 70%">
+                        <input type="text" required />
+                        <label class="datos">
+                            <span class="nombre_campo">Raza</span>
+                        </label>
+                    </form>
+                </div>
+
+                <div class="fila">
+                    <div class="opciones">
+                        <div id="lblMascota">Tamaño:</div>
+                        <select name="tamano" style="width: 100%">
+                            <option>Pequeño</option>
+                            <option>Mediano</option>
+                            <option>Grande</option>
+                        </select>
+                    </div>
+
+                    <div class="opciones">
+                        <div id="lblMascota">Pelaje:</div>
+                        <select name="pelaje" style="width: 100%">
+                            <option>Corto</option>
+                            <option>Rizado</option>
+                            <option>Largo</option>
+                        </select>
+                    </div>
+
+                    <div class="opciones">
+                        <div id="lblMascota">Sexo:</div>
+                        <select name="sexo" style="width: 100%">
+                            <option>Macho</option>
+                            <option>Hembra</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="btnSiguiente">
+                    <h4 id="lblSiguiente">Siguiente Mascota</h4>
+                    <img src="img/flechaSig.png" alt="flecha" />
+                </button>
+
+                <button id="btnRegistro">
+                    Registrarse
+                </button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
