@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,14 @@
     <link rel="stylesheet" href="stylePetshop.css">
     <title>PetShop</title>
 </head>
+
 <body>
     <header id="header">
 
         <nav class="navegacion" id="nav-menu-container">
             <div id="contenedor_logo">
                 <img id="logo_img" src="img/logo.png" alt="logo">
-    
+
                 <ul class="nav-menu">
                     <li><a href="#hero">INICIO</a></li>
                     <li><a href="#about">CONÓCENOS</a></li>
@@ -23,40 +25,188 @@
             </div>
             <button id="btn_inisesion">INICIAR SESION</button>
         </nav>
-    
+
     </header>
     <section id="noh">
-    <rect></rect>
-    <h1>Pet Shop</h1>
-    <img class="bone" src="img/bone.png"></img>
-    <t1>TOME EN CUENTA ACERCA DE</t1>
-    <t2>LA COMPRA, ENTREGA Y PAGO</t2>
-    <img class="icprod" src="img/prod.png"></img>
-    <img class="bck" src="img/bckp.png"></img>
-    <img class="pets" src="img/petss.png"></img>
-    <p class="prn">
-        Para llevar a su mascota a una consulta médica veterinaria, es necesario separar su cita, 
-        de acuerdo a la disponibilidad del Médico de turno,
-         coordinando a través de nuestra central telefónica.<br><br> 
-         Recuerde que nuestro horario de atención de consultas 
-         inicia a las 09am. y culmina a las 20hrs. Siendo la
-          última cita a las 19:30hrs.<br><br> Para que la atención de 
-          su mascota se desarrolle con tranquilidad y excelencia
-          , le recomendamos asistir puntualmente al consultorio.<br><br>
-           En caso de no poder asistir a la consulta, lo
-            recomendable es comunicarse a nuestra Central de 
-            Citas, llamando al 01 223-2180 y reprogramar la 
-            fecha y hora de su consulta.
-    </p>
-    <div class="filtro">
-        <select name="cat" id="selCat"><span>Categoria</span><option>Comida</option><option>Ropa</option></select>
-        <select name="brn" id="selBrand"><option>Marca</option><option>Ropa</option></select>
-        <select name="prc" id="selPrice"><option>Precio</option><option>Ropa</option></select>
-    </div>
-    <ord>
-        <txfind>Resultados Encontrados</txfind>
-    <ordr></ordr>
-    </ord>
-</section>
+        <rect></rect>
+        <h1>Pet Shop</h1>
+        <img class="bone" src="img/bone.png"></img>
+        <t1>TOME EN CUENTA ACERCA DE</t1>
+        <t2>LA COMPRA, ENTREGA Y PAGO</t2>
+        <img class="icprod" src="img/prod.png"></img>
+        <img class="bck" src="img/bckp.png"></img>
+        <img class="pets" src="img/petss.png"></img>
+        <p class="prn">
+            Para llevar a su mascota a una consulta médica veterinaria, es necesario separar su cita, de acuerdo a la
+            disponibilidad del Médico de turno, coordinando a través de nuestra central telefónica.<br><br> Recuerde que
+            nuestro horario de atención
+            de consultas inicia a las 09am. y culmina a las 20hrs. Siendo la última cita a las 19:30hrs.<br><br> Para
+            que la atención de su mascota se desarrolle con tranquilidad y excelencia , le recomendamos asistir
+            puntualmente al consultorio.<br><br> En caso de no poder asistir a la consulta, lo recomendable es
+            comunicarse a nuestra Central de Citas, llamando al 01 223-2180 y reprogramar la fecha y hora de su
+            consulta.
+        </p>
+        <div class="filtro">
+            <select name="cat" id="selCat" class="form-control">
+                <option>Categoria</option>
+            </select>
+            <select name="brn" id="selBrand">
+                <option>Marca</option>
+            </select>
+            <input type="number" id="textPrice" placeholder="Precio máximo">
+            <button name="btnSearch" onclick="searchProduct()">Buscar</button>
+        </div>
+        <ord>
+            <txfind>Resultados Encontrados</txfind>
+            <div name="divResult">
+
+            </div>
+            <ordr></ordr>
+        </ord>
+    </section>
+    <script>
+
+        var UrlBackendJS = "http://localhost:5000";
+
+        var sel_categoria = document.getElementsByName("cat")[0];
+        var sel_marca = document.getElementsByName("brn")[0];
+        var divResult = document.getElementsByName("divResult")[0];
+
+        var data;
+        var dataFiltrada;
+        var toShop = false;
+
+        async function makeShop(url, data = {}) {
+            // Opciones por defecto estan marcadas con un *
+            const response = await fetch(url, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify(data)
+            });
+            return response.json(); // parses JSON response into native JavaScript objects
+        }
+
+        async function getData(url) {
+            const response = await fetch(url, {
+                mode: 'cors',
+
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Credentials': 'true'
+                }
+            });
+            return response.json();
+        }
+
+        getData(UrlBackendJS + "/product/getProducts").then(response => {
+
+            data = response.data;
+            var categorias = [];
+            var marcas = [];
+
+            for (let i = 0; i < data.length; i++) {
+                categorias.push(data[i].categoria);
+                marcas.push(data[i].marca);
+            }
+
+            var setCategorias = categorias.filter(function (item, pos, self) {
+                return self.indexOf(item) == pos;
+            });
+            var setMarcas = marcas.filter(function (item, pos, self) {
+                return self.indexOf(item) == pos;
+            });
+
+
+
+            for (let i = 0; i < setCategorias.length; i++) {
+                let option = document.createElement("option");
+                option.text = setCategorias[i];
+                sel_categoria.appendChild(option);
+            }
+            for (let i = 0; i < setMarcas.length; i++) {
+                let option = document.createElement("option");
+                option.text = setMarcas[i];
+                sel_marca.appendChild(option);
+            }
+
+        })
+            .catch((error) => {
+                console.log(error)
+                console.log("ocurrio un error")
+            });
+
+        function searchProduct() {
+            var opcionesSeleccionadas = [
+                sel_categoria.options[sel_categoria.selectedIndex].text,
+                sel_marca.options[sel_marca.selectedIndex].text,
+                document.getElementById("textPrice").value == "" ? 1000 : document.getElementById("textPrice").value
+            ];
+
+            dataFiltrada = data.filter(function (el) {
+                return el.categoria == opcionesSeleccionadas[0] &&
+                    el.marca == opcionesSeleccionadas[1] &&
+                    el.precio <= opcionesSeleccionadas[2];
+            });
+            
+            // eliminamos los hijos antes existentes
+            let len = divResult.childElementCount;
+            let child = divResult.lastElementChild;
+            while (child && len >= 1) {
+                divResult.removeChild(child);
+                len -= 1;
+                child = divResult.lastElementChild;
+            }
+
+            if (dataFiltrada.length == 0) {
+
+                let div = document.createElement("div");
+                let h3 = document.createElement("h3");
+                h3.innerHTML = "NO SE ENCONTRARON ELEMENTOS";
+                div.appendChild(h3);
+                divResult.appendChild(div);
+            } else {
+                for (let i = 0; i < dataFiltrada.length; i++) {
+
+                    // aqui recien agregamos los nuevos hijos
+                    const element = dataFiltrada[i];
+                    let div = document.createElement("div");
+                    let h4 = document.createElement("h4");
+                    let h5 = document.createElement("h5");
+                    let button = document.createElement("button");
+
+                    div.className = "boxInfo";
+                    h4.innerHTML = element.nombre;
+                    h5.innerHTML = element.precio;
+                    button.innerText = "Comprar";
+                    button.addEventListener("click", function () {
+                        shopProduct(element)
+                    });
+
+                    div.appendChild(h4);
+                    div.appendChild(h5);
+                    div.appendChild(button);
+                    divResult.appendChild(div);
+                }
+            }
+        }
+
+        function shopProduct(productDataToShop) {
+            console.log("Producto comprado!")
+            console.log(productDataToShop)
+            /* postData(UrlBackendJS + '', { data: productDataToShop })
+                .then(response=> {
+                    console.log(response); // JSON data parsed by `data.json()` call
+                }) */
+        }
+    </script>
 </body>
-</html>
+
+</html>o
