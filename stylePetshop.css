@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Germania+One");
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
   margin: 0;
@@ -346,10 +347,115 @@ txfind {
 
   color: rgba(0, 0, 0, 0.5);
 
-  /* Inside Auto Layout */
+/* Inside Auto Layout */
 
-  flex: none;
-  order: 0;
-  flex-grow: 1;
-  margin: 0px 12px;
+flex: none;
+order: 0;
+flex-grow: 1;
+margin: 0px 12px;
+}
+
+#products {
+    position: absolute;
+    width: 1200px;
+    left: calc(50% - 1200px/2 + 8.5px);
+    top: 700px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+div.product{
+    position: absolute;
+width: 285px;
+height: 318px;
+left: 0px;
+top: 0px;
+
+flex: none;
+border: 1px solid rgba(0, 0, 0, 0.1);
+box-sizing: border-box;
+}
+
+img.productImg{
+    position: absolute;
+    width: 265px;
+height: 161px;
+left: calc(285px/2 - 265px/2);
+top: calc(285px/2 - 265px/2);
+border: 1px solid #D1D1D1;
+box-sizing: border-box;
+}
+
+div.prDesc{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 120px;
+height: 92px;
+top: calc(50% + 15px);
+left: calc(285px/2 - 265px/2);
+}
+
+span.prPrice{
+    font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 27px;
+line-height: 32px;
+color: #000000;
+
+}
+
+span.prName{
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+/* identical to box height */
+/* Roboto Regular 14px */
+color: #000000;
+}
+
+span.prBrand{
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+/* black 50% */
+color: rgba(0, 0, 0, 0.5);
+}
+
+menos{
+    position: absolute;
+width: 21.34px;
+height: 22.16px;
+bottom: 4px;
+right: 9px;
+background: url(img/menos.png);
+}
+
+mas{
+    position: absolute;
+width: 21.34px;
+height: 22.16px;
+bottom: 4px;
+right: 86px;
+background: url(img/mas.png);
+}
+recnt{
+    position: absolute;
+width: 35.95px;
+height: 19.1px;
+bottom: 5px;
+right: 40px;
+background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.4);
+box-sizing: border-box;
 }
