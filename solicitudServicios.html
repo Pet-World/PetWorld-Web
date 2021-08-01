@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-s8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleSoliServicios.css">
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Rose&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Solicitud de Servicio</title>
+
+</head>
+
+<body>
+    <header id="header">
+        <nav class="navegacion" id="nav-menu-container">
+            <div id="contenedor_logo">
+                <img id="logo_img" src="img/logo.png" alt="logo">
+
+                <ul class="nav-menu">
+                    <li><a href="#hero">INICIO</a></li>
+                    <li><a href="#about">CONÓCENOS</a></li>
+                    <li><a href="#servicios">SERVICIOS</a></li>
+                    <li><a href="#contact">CONTÁCTANOS</a></li>
+                </ul>
+            </div>
+            <button id="btn_inisesion">INICIAR SESION</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="contenedor">
+            <div id="contenedor-boleta">
+                <div id="fila">
+                    <h2 id="titulo-boleta">Solicitud de Servicio</h2>
+                    <button id="exit"><img src="img/exit.png" alt=""></button>
+                </div>
+                <div class="columna1">
+                    <div class="columna1" id="col1">
+                        <fieldset>
+                            <legend>Nombre(s)</legend>
+                            <input readonly onmousedown="return false;" type="text" name="nombre" id="nombre">
+                        </fieldset>
+                        <fieldset>
+                            <legend>DNI</legend>
+                            <input readonly onmousedown="return false;" type="text" name="dni" id="dni">
+                        </fieldset>
+                        <fieldset>
+                            <legend>Telefono Fijo</legend>
+                            <input readonly onmousedown="return false;" type="text" name="fijo" id="fijo">
+                        </fieldset>
+                        <fieldset>
+                            <legend>Telefono Movil</legend>
+                            <input readonly onmousedown="return false;" type="text" name="movil" id="movil">
+                        </fieldset>
+                    </div>
+                    <div class="columna2" id="col2">
+
+                        <fieldset>
+                            <legend>Apellido(s)</legend>
+                            <input readonly onmousedown="return false;" type="text" name="apellidos" id="apellidos">
+                        </fieldset>
+
+
+                        <fieldset id="cuadro_mascota">
+                            <legend>Mascota</legend>
+                            <input readonly onmousedown="return false;" type="text" name="mascota" id="mascota">
+                        </fieldset>
+
+                    </div>
+                    <fieldset class="cuadro-inline" id="cuadro-email">
+                        <legend>E-mail</legend>
+                        <input readonly onmousedown="return false;" type="text" name="email" id="email">
+                    </fieldset>
+                    <fieldset class="cuadro-inline">
+                        <legend>Sugerencia de fecha para la cita</legend>
+                        <input type="text" name="sugerencia" id="sugerencia">
+                    </fieldset>
+                </div>
+                <div class="columna2">
+                    <fieldset id="cuadro_resumen">
+                        <legend>Resumen de solicitud de compra</legend>
+                        <input type="text" name="resumen" id="resumen">
+                    </fieldset>
+                    <div class="text-input">
+                        <input readonly onmousedown="return false;" type="number" name="total" id="total">
+                        <h3>Total:</h3>
+                    </div>
+                    <div class="text-input">
+                        <input type="number" name="efectivo" id="efectivo">
+                        <h3>Efectivo para pago:</h3>
+                    </div>
+                </div>
+                <p id="importante"><span>IMPORTANTE : </span>Tomar en cuenta las condiciones y pasos para la solicitud, movilidad y pago de un servicio</p>
+                <button id="enviar">ENVIAR</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
