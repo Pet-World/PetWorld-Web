@@ -5,35 +5,37 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-color: rgba(255, 122, 0);
+    --marron: #62412F;
+    --verde: #40b840;
+}
+
 #header {
     position: fixed;
+    top: 0;
     width: 100vw;
-    height: 14vh;
-    top: 0px;
-    background: rgba(255, 122, 0);
+    height: 5rem;
+    background: var(--bg-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Nunito;
+    font-family: 'Nunito', sans-serif;
     font-style: normal;
     z-index: 10;
 }
 
 #contenedor_logo {
     display: flex;
-    flex-direction: row;
     align-items: center;
     padding: 0px;
     position: absolute;
     width: 850px;
     height: 80px;
     left: 100px;
-    top: 8px;
 }
 
 #logo_img {
     width: 110px;
     height: 70px;
-    left: 0px;
-    top: 5px;
 }
 
 a {
@@ -65,7 +67,7 @@ a {
 
 .nav-menu a {
     text-decoration: none;
-    background-image: linear-gradient(#40b840, #40b840);
+    background-image: linear-gradient(var(--verde), var(--verde));
     background-position: 0% 100%;
     background-repeat: no-repeat;
     background-size: 0% 2px;
@@ -77,31 +79,37 @@ a {
     background-size: 100% 2px;
 }
 
-#btn_inisesion {
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    width: 203px;
-    height: 42px;
-    left: calc(50% - 203px/2 + 481px);
-    top: calc(50% - 42px/2);
-    background: #FFFFFF;
+button {
+    cursor: pointer;
+    transition: 0.4s;
     border: none;
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+    color: white;
+    transform: scale(0.99);
+}
+
+#btn_inisesion {
+    justify-content: center;
+    align-items: center;
+    float: right;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    width: 203px;
+    height: 42px;
+    background-color: #fff;
     border-radius: 6px;
     font-weight: bold;
     font-size: 18px;
     line-height: 20px;
     letter-spacing: 2px;
     padding: 0px 10px;
-    cursor: pointer;
-    transition: 0.4s;
 }
 
 #btn_inisesion:hover {
-    background: #40b840;
-    color: white;
-    transform: scale(0.99);
+    background: var(--verde);
 }
 
 
@@ -110,7 +118,7 @@ a {
 .secciones {
     width: 100%;
     height: 86vh;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 
@@ -120,53 +128,75 @@ a {
     margin-top: 10px;
 }
 
-#hero {
-    margin-top: 14vh;
-    background-size: cover;
-    background-image: url(img/fondo.jpg);
-}
-
 .section-contenedor {
-    padding: 10px;
+    padding: 10px 0 10px 10px;
     height: 100%;
     display: flex;
     justify-content: left;
     text-align: center;
 }
 
+#hero {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+    background-image: url(img/fondo.jpg);
+    padding-top: 30vh;
+}
+
+#hero .hero-contenedor {
+    float: left;
+    margin-left: 4rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
 #hero-contenedor-text {
-    margin-top: 145px;
-    margin-left: 64px;
-    width: 440px;
-    height: 275px;
+    padding: 30px 20px 20px 20px;
+    width: 28em;
+    height: 45vh;
     background: rgba(196, 196, 196, 0.75);
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-#petworld {
-    width: 320px;
-    margin-top: 30px;
+#hero h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 74px;
+    line-height: 74px;
+    transform: scaleY(1.15);
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.2));
 }
 
-#slogan {
-    display: block;
-    margin-left: 39px;
-    margin-top: 20px;
+#hero h2 {
+    font-family: 'Merriweather', serif;
+    font-style: normal;
+    color: rgba(61, 61, 61, 0.9);
+    padding-top: 20px;
+    font-size: 20px;
 }
 
-#btn-ver-mas {
-    background-color: rgba(255, 122, 0);
-    margin-top: 20px;
-    width: 157px;
-    height: 46px;
+#hero .btn-ver-mas {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 20px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 5px;
+    transition: 0.5s;
+    margin: 15px 10px 0 10px;
     border: none;
-    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.4s;
+    color: #fff;
+    background-color: var(--bg-color);
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-#btn-ver-mas:hover {
-    background: #40b840;
+#hero .btn-ver-mas:hover {
+    background-color: var(--verde);
 }
 
 #img_conocenos {
@@ -231,7 +261,7 @@ a {
     height: 63px;
     left: calc(50% - 368px/2 + 280px);
     top: 750px;
-    font-family: Love Ya Like A Sister;
+    font-family: "Love Ya Like A Sister";
     font-style: normal;
     font-weight: normal;
     font-size: 50px;
@@ -381,17 +411,11 @@ a {
     margin-top: 30px;
 }
 
-#huellitas {
-    position: absolute;
-    right: 1px;
-    top: 1960px;
-}
-
 #localizacion {
-    position: absolute;
-    width: 560px;
-    right: 90px;
-    top: 1960px;
+    /* position: absolute; */
+    width: 100%;
+    margin-top: 2em;
+    /* right: 90px; */
 }
 
 #col1-contactanos {
