@@ -47,21 +47,18 @@
             consulta.
         </p>
         <div class="filtro">
-            <select name="cat" id="selCat" class="form-control">
-                <option>Categoria</option>
+          <select name="cat" id="selCat" class="form-control"> 
             </select>
             <select name="brn" id="selBrand">
-                <option>Marca</option>
             </select>
             <input type="number" id="textPrice" placeholder="Precio máximo">
-            <button name="btnSearch" onclick="searchProduct()">Buscar</button>
+            <button name="btnSearch" id="btnSr" onclick="searchProduct()">Buscar</button>
         </div>
         <ord>
             <txfind>Resultados Encontrados</txfind>
-            <div name="divResult">
+            <div name="divResult" id="products">
                     
             </div>
-            <ordr></ordr>
         </ord>
     </section>
     <script>

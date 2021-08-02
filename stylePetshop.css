@@ -250,7 +250,7 @@ div.filtro {
 
 #selCat {
   position: absolute;
-  width: 255px;
+  width: 355px;
   height: 35px;
   left: 0px;
   bottom: 0px;
@@ -268,9 +268,9 @@ div.filtro {
 
 #selBrand {
   position: absolute;
-  width: 254px;
+  width: 354px;
   height: 35px;
-  left: 280px;
+  left: 380px;
   bottom: 0px;
   top: 13px;
   background: #ffffff;
@@ -318,19 +318,6 @@ ord {
   top: 624px;
 }
 
-ordr {
-  position: absolute;
-  left: 80%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-
-  background: #ffffff;
-  border: 0.5px solid rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
-  border-radius: 5px;
-}
-
 txfind {
   position: absolute;
   width: 902px;
@@ -355,21 +342,21 @@ flex-grow: 1;
 margin: 0px 12px;
 }
 
-#divResult {
+#products {
     position: absolute;
     width: 1200px;
     left: calc(50% - 1200px/2 + 8.5px);
-    top: 700px;
+    top: 50px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
 div.product{
-    position: absolute;
+    position: relative;
 width: 285px;
 height: 318px;
-left: 0px;
-top: 0px;
+
 
 flex: none;
 border: 1px solid rgba(0, 0, 0, 0.1);
@@ -458,4 +445,40 @@ right: 40px;
 background: #FFFFFF;
 border: 1px solid rgba(0, 0, 0, 0.4);
 box-sizing: border-box;
+}
+
+#textPrice{
+  position: absolute;
+  width: 255px;
+  height: 35px;
+  left: 750px;
+  bottom: 0px;
+  top: 13px;
+  background: #ffffff;
+  border-radius: 3px;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 25px;
+}
+
+#btnSr{
+  position: absolute;
+  position: absolute; 
+  width: 55px;
+  height: 35px;
+  right: 100px;
+  bottom: 0px;
+  top: 13px;
+  background: #ffffff;
+  border-radius: 3px;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
