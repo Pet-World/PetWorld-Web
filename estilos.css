@@ -373,15 +373,20 @@ section,
     margin-top: 24px;
     width: 98.5vw;
     text-align: center;
+    position: absolute;
 }
 
 #fondo_servicios {
-    position: absolute;
-    width: 98vw;
-    /* height: 20rem; */
+    width: 100vw;
+}
+
+.servicios_img{
+    display: inline-block;
+    /* position: absolute; */
 }
 
 #flecha {
+    /* position: absolute; */
     background-color: rgba(255, 122, 0);
     cursor: pointer;
     width: 30px;
