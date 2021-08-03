@@ -91,7 +91,6 @@
                     if (data.status == 'SUCCESS') {
                         window.location.href = '/PetWorld-Web/#servicios';
                         localStorage.setItem("user", JSON.stringify(data.data[0]));
-
                     } else {
                         alert(data.message);
                     }
