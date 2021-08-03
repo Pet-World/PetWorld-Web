@@ -321,13 +321,13 @@ opt4 {
 }
 
 #lcitas {
-    position: absolute;
+    position: relative;
     width: 783px;
-    height: 401.17px;
+    height: 50px;
     left: 497px;
-    top: calc(213px - 14vh);
+    top: calc(200px - 14vh);
     background: rgba(225, 225, 225, 0.63);
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    border: 0px solid rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
 }
 
@@ -336,7 +336,7 @@ img.trv {
     width: 15.35px;
     height: 18px;
     left: 11.96px;
-    margin-top: 0px;
+    top: 30%;
 }
 
 lm {
@@ -344,6 +344,7 @@ lm {
     width: 281px;
     height: 16px;
     left: 53px;
+    top: 30%;
     font-family: DM Sans;
     font-style: normal;
     font-weight: 500;
@@ -362,7 +363,8 @@ hr.lis {
 }
 
 .stars {
-    position: absolute;
+    position: relative;
     left: 600px;
+    top: 25%;
     cursor: pointer;
 }

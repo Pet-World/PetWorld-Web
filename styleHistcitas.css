@@ -247,7 +247,7 @@ hr.lis {
 }
 
 .stars {
-    position: absolute;
+    position: relative;
     left: 600px;
     top: 25%;
     cursor: pointer;
