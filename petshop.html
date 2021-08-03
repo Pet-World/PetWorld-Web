@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Bootstrap -->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="stylePetshop.css">
-    <link rel="stylesheet" href="styleSoliCompra.css">
+    <!-- <link rel="stylesheet" href="styleSoliCompra.css"> -->
     <link rel="stylesheet" href="estilos.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -59,71 +60,71 @@
             <div name="divResult" id="products">
 
             </div>
-            
+
         </ord>
         <r2 data-toggle="modal" data-target="#myModal"></r2>
         <bt data-toggle="modal" data-target="#myModal">SOLICITAR</bt>
     </section>
     <div class="modal fade" id="myModal" role="dialog">
-    <div id="contenedor-boleta">
-        <div id="fila">
-            <h2 id="titulo-boleta">Solicitud de Compra</h2>
-            <button id="exit"><img src="img/exit.png" alt=""></button>
-        </div>
-        <div class="columna1">
-            <div class="columna1" id="col1">
-                <fieldset>
-                    <legend>Nombre(s)</legend>
-                    <input readonly onmousedown="return false;" type="text" name="nombre" id="nombre">
-                </fieldset>
+        <div id="contenedor-boleta">
+            <div id="fila">
+                <h2 id="titulo-boleta" style="margin-top: 0 !important;">Solicitud de Compra</h2>
+                <button id="exit" data-dismiss="modal"><img src="img/exit.png" alt=""></button>
+            </div>
+            <div class="columna1">
+                <div class="columna1" id="col1">
+                    <fieldset>
+                        <legend>Nombre(s)</legend>
+                        <input readonly onmousedown="return false;" type="text" name="nombre" id="nombre">
+                    </fieldset>
 
-                <fieldset>
-                    <legend>DNI</legend>
-                    <input readonly onmousedown="return false;" type="text" name="dni" id="dni">
-                </fieldset>
+                    <!-- <fieldset>
+                        <legend>DNI</legend>
+                        <input readonly onmousedown="return false;" type="text" name="dni" id="dni">
+                    </fieldset> -->
 
-                <fieldset>
-                    <legend>Telefono Fijo</legend>
-                    <input readonly onmousedown="return false;" type="text" name="fijo" id="fijo">
-                </fieldset>
+                    <fieldset>
+                        <legend>Telefono Fijo</legend>
+                        <input readonly onmousedown="return false;" type="text" name="fijo" id="fijo">
+                    </fieldset>
 
-                <label for="delivery"><input type="checkbox" name="delivery" id="delivery">Delivery</label>
+                    <label for="delivery"><input type="checkbox" name="delivery" id="delivery">Delivery</label>
 
-                <fieldset>
-                    <legend>Distrito</legend>
-                    <select name="distrito" id="distrito">
+                    <fieldset>
+                        <legend>Distrito</legend>
+                        <select name="distrito" id="distrito">
                         <option value="Lima">Lima</option>
                     </select>
-                </fieldset>
-            </div>
-            <div class="columna2" id="col2">
+                    </fieldset>
+                </div>
+                <div class="columna2" id="col2">
 
-                <fieldset>
-                    <legend>Apellido(s)</legend>
-                    <input readonly onmousedown="return false;" type="text" name="apellidos" id="apellidos">
-                </fieldset>
+                    <fieldset>
+                        <legend>Apellido(s)</legend>
+                        <input readonly onmousedown="return false;" type="text" name="apellidos" id="apellidos">
+                    </fieldset>
 
-                <!-- Fieldset Telefono Invisible -->
-                <fieldset style="visibility: hidden;">
-                    <legend>Telefono Movil</legend>
-                    <input readonly onmousedown="return false;" type="text" name="movil" id="movil">
-                </fieldset>
+                    <!-- Fieldset Telefono Invisible -->
+                    <!-- <fieldset style="visibility: hidden;">
+                        <legend>Telefono Movil</legend>
+                        <input readonly onmousedown="return false;" type="text" name="movil" id="movil">
+                    </fieldset> -->
 
-                <fieldset>
-                    <legend>Telefono Movil</legend>
-                    <input readonly onmousedown="return false;" type="text" name="movil" id="movil">
-                </fieldset>
+                    <fieldset>
+                        <legend>Telefono Movil</legend>
+                        <input readonly onmousedown="return false;" type="text" name="movil" id="movil">
+                    </fieldset>
 
-                <!-- Label Delivery Invisible -->
-                <label style="visibility: hidden;" for="delivery"><input type="checkbox" name="delivery" id="delivery">Delivery</label>
+                    <!-- Label Delivery Invisible -->
+                    <label style="visibility: hidden;" for="delivery"><input type="checkbox" name="delivery" id="delivery">Delivery</label>
 
-                <fieldset>
-                    <legend>Direccion</legend>
-                    <input type="text" name="direccion" id="direccion">
-                </fieldset>
-            </div>
+                    <fieldset>
+                        <legend>Direccion</legend>
+                        <input type="text" name="direccion" id="direccion">
+                    </fieldset>
+                </div>
 
-            <!-- <fieldset class="fila2">
+                <!-- <fieldset class="fila2">
                 <legend>Distrito</legend>
                 <select name="distrito" id="distrito">
                     <option value="Lima">Lima</option>
@@ -133,29 +134,29 @@
                 <legend>Direccion</legend>
                 <input type="text" name="direccion" id="direccion">
             </fieldset> -->
-            <fieldset class="cuadro-inline">
-                <legend>Sugerencia de fecha para el delivery</legend>
-                <input type="text" name="sugerencia" id="sugerencia">
-            </fieldset>
-        </div>
-        <div class="columna2">
-            <fieldset id="cuadro_resumen">
-                <legend>Resumen de solicitud de compra</legend>
-                <input type="text" name="resumen" id="resumen">
-            </fieldset>
-            <div class="text-input">
-                <input readonly onmousedown="return false;" type="number" name="total" id="total">
-                <h3>Total:</h3>
+                <fieldset class="cuadro-inline">
+                    <legend>Sugerencia de fecha para el delivery</legend>
+                    <input type="text" name="sugerencia" id="sugerencia">
+                </fieldset>
             </div>
-            <div class="text-input">
-                <input type="number" name="efectivo" id="efectivo">
-                <h3>Efectivo para pago:</h3>
+            <div class="columna2">
+                <fieldset id="cuadro_resumen">
+                    <legend>Resumen de solicitud de compra</legend>
+                    <input type="text" name="resumen" id="resumen">
+                </fieldset>
+                <div class="text-input">
+                    <input readonly onmousedown="return false;" type="number" name="total" id="total">
+                    <h3>Total:</h3>
+                </div>
+                <div class="text-input" style="visibility: hidden;">
+                    <input type="number" name="efectivo" id="efectivo">
+                    <h3>Efectivo para pago:</h3>
+                </div>
             </div>
+            <p id="importante"><span>IMPORTANTE : </span>Tomar en cuenta las condiciones y pasos para la solicitud, entrega y pago de un servicio</p>
+            <button id="enviar">ENVIAR</button>
         </div>
-        <p id="importante"><span>IMPORTANTE : </span>Tomar en cuenta las condiciones y pasos para la solicitud, entrega y pago de un servicio</p>
-        <button id="enviar">ENVIAR</button>
     </div>
-</div>
 
     <script>
         var UrlBackendJS = "http://localhost:5000";
@@ -326,7 +327,7 @@
             console.log(productDataToAdd)
             var n = shopList.get(productDataToAdd.id_producto)
             shopList.set(productDataToAdd.id_producto, n + 1)
-               
+
         }
 
         function rmvProduct(productDataToRmv) {
@@ -337,37 +338,36 @@
             }
         }
 
-        var btn=document.getElementsByTagName("r2")[0];
-        btn.addEventListener("click", function(){
+        var btn = document.getElementsByTagName("r2")[0];
+        btn.addEventListener("click", function() {
             for (let i = 0; i < data.length; i++) {
-                    var n = shopList.get(data[i].id_producto);
-                    if (n>0){
-                        var fs = document.getElementById("cuadro_resumen");
-                        fs.innerHTML=n;
-                        console.log(n);
-                    }
+                var n = shopList.get(data[i].id_producto);
+                if (n > 0) {
+                    var fs = document.getElementById("cuadro_resumen");
+                    fs.innerHTML = n;
+                    console.log(n);
                 }
-                /* makeShop(UrlBackendJS + '', { data: productDataToShop })
-                    .then(response=> {
-                        console.log(response); // JSON data parsed by `data.json()` call
-                    }) */
+            }
+            /* makeShop(UrlBackendJS + '', { data: productDataToShop })
+                .then(response=> {
+                    console.log(response); // JSON data parsed by `data.json()` call
+                }) */
         });
-        var btn2=document.getElementsByTagName("bt")[0];
-        btn2.addEventListener("click", function(){
+        var btn2 = document.getElementsByTagName("bt")[0];
+        btn2.addEventListener("click", function() {
             for (let i = 0; i < data.length; i++) {
-                    var n = shopList.get(data[i].id_producto);
-                    if (n>0){
-                        var fs = document.getElementsById("cuadro_resumen");
-                        fs.innerHTML=n;
-                        console.log(n);
-                    }
+                var n = shopList.get(data[i].id_producto);
+                if (n > 0) {
+                    var fs = document.getElementsById("cuadro_resumen");
+                    fs.innerHTML = n;
+                    console.log(n);
                 }
-                /* makeShop(UrlBackendJS + '', { data: productDataToShop })
-                    .then(response=> {
-                        console.log(response); // JSON data parsed by `data.json()` call
-                    }) */
+            }
+            /* makeShop(UrlBackendJS + '', { data: productDataToShop })
+                .then(response=> {
+                    console.log(response); // JSON data parsed by `data.json()` call
+                }) */
         });
-
     </script>
 </body>
 
