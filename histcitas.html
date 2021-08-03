@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="styleHistcitas.css">
     <title>PetShop</title>
 </head>
@@ -54,76 +55,59 @@
         </a>
 
         <section id="lcitas">
-            <hr class="lis" style="top: calc(100%/7);">
-            <hr class="lis" style="top: calc(2*100%/7)">
-            <hr class="lis" style="top: calc(3*100%/7);">
-            <hr class="lis" style="top: calc(4*100%/7);">
-            <hr class="lis" style="top: calc(5*100%/7);">
-            <hr class="lis" style="top: calc(6*100%/7);">
-            <img class="trv" src="img/triv.png" style="top: calc(100%/14 - 18px/2);"></img>
-            <img class="trv" src="img/triv.png" style="top: calc(3*100%/14 - 18px/2);"></img>
-            <img class="trv" src="img/triv.png" style="top: calc(5*100%/14 - 18px/2);"></img>
-            <img class="trv" src="img/triv.png" style="top: calc(7*100%/14 - 18px/2);"></img>
-            <img class="trv" src="img/triv.png" style="top: calc(9*100%/14 - 18px/2);"></img>
-            <img class="trv" src="img/triv.png" style="top: calc(11*100%/14 - 18px/2);"></img>
-            <img class="trv" src="img/triv.png" style="top: calc(13*100%/14 - 18px/2);"></img>
-            <lm style="top: calc(100%/14 - 16px/2);">Chequeos médicos preventivos </lm>
-            <lm style="top: calc(3*100%/14 - 16px/2);">Análisis de laboratorio</lm>
-            <lm style="top: calc(5*100%/14 - 16px/2);">Ecografías</lm>
-            <lm style="top: calc(7*100%/14 - 16px/2);">Microchips</lm>
-            <lm style="top: calc(9*100%/14 - 16px/2);">Snaps de descarte de Parvovirosis</lm>
-            <lm style="top: calc(11*100%/14 - 16px/2);">Snaps de descarte de distemper </lm>
-            <lm style="top: calc(13*100%/14 - 16px/2);">Snaps de descarte de Sida </lm>
-            <div style="top: calc(100%/14 - 16px/2);">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-            </div>
-            <div>
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-            </div>
-            <div>
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-            </div>
-            <div>
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-            </div>
-            <div>
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-            </div>
-            <div>
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-            </div>
-            <div>
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
-                <img src="img/star.png" alt="star">
+            <img class="trv" src="img/triv.png"></img>
+            <lm>Chequeos médicos preventivos </lm>
+            <div class="stars">
+                <img id="1estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
+                <img id="2estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
+                <img id="3estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
+                <img id="4estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
+                <img id="5estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
             </div>
 
         </section>
     </section>
+
 </body>
+
+<script>
+    var UrlBackendJS = "http://localhost:5000 ";
+
+    var contador;
+    var click = false;
+    var valorado = false;
+
+    function valorar(item) {
+        if (!valorado) {
+            cambio(item, "img/colorStar.png ");
+        };
+        click = true;
+        valorado = true;
+    }
+
+    function restaurar(item) {
+        if (!click) {
+            cambio(item, "img/star.png ");
+        }
+    }
+
+    function cambiar(item) {
+        if (!click) {
+            cambio(item, "img/colorStar.png ");
+        }
+    }
+
+    function cambio(item, imagen) {
+        contador = item.id[0];
+        let nombre = item.id.substring(1);
+        console.log(contador);
+        console.log(nombre);
+        for (let i = 0; i < 5; i++) {
+            if (i < contador) {
+                document.getElementById((i + 1) + nombre).src = imagen;
+            }
+        }
+    }
+</script>
+
+</html>
