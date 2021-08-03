@@ -199,29 +199,30 @@ div.filtro {
 ord {
     position: absolute;
     width: 1200px;
-    height: 30px;
+    height: 80px;
+    display: inline-block;
     left: 91px;
-    top: 624px;
+    top: 620px;
 }
 
 txfind {
     position: absolute;
     width: 902px;
-    height: 21px;
+    height: 18px;
     left: 0px;
-    top: 4.5px;
+    display: inline-block;
     font-family: Roboto;
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
-    line-height: 21px;
+    line-height: 18px;
     /* identical to box height */
     color: rgba(0, 0, 0, 0.5);
     /* Inside Auto Layout */
     flex: none;
     order: 0;
     flex-grow: 1;
-    margin: 0px 12px;
+    margin: 0px 2px;
 }
 
 #products {
@@ -229,6 +230,7 @@ txfind {
     width: 1200px;
     left: calc(50% - 1200px/2 + 8.5px);
     top: 50px;
+    padding-bottom: 60px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -358,11 +360,12 @@ recnt {
 }
 
 r2 {
-    position: absolute;
+    position: fixed;
     width: 176px;
     height: 49px;
     left: calc(50% - 176px/2);
-    top: 528px;
+    bottom: 10px;
+    display: inline-block;
     background: #C4C4C4;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -371,11 +374,12 @@ r2 {
 }
 
 bt {
-    position: absolute;
+    position: fixed;
     width: 112px;
     height: 30px;
     left: calc(50% - 112px/2);
-    top: 538px;
+    bottom: 10px;
+    margin-bottom: 9px;
     font-family: DM Sans;
     font-style: normal;
     font-weight: 500;

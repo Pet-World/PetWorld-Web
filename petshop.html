@@ -54,6 +54,7 @@
             <div name="divResult" id="products">
 
             </div>
+            
         </ord>
         <r2></r2>
         <bt>SOLICITAR</bt>
@@ -240,6 +241,12 @@
                 shopList.set(productDataToRmv.id_producto, n - 1);
             }
         }
+
+        var btn=document.getElementsByTagName("bt")[0];
+        btn.addEventListener("click", function(){
+                console.log("solicitar")
+        });
+
     </script>
 </body>
 
