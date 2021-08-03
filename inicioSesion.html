@@ -5,10 +5,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PetWorld</title>
+    <title>inicioSesion</title>
     <link rel="stylesheet" href="estilos.css" />
     <link rel="stylesheet" href="estilosIniSesion.css" />
-    <!-- <link rel="stylesheet" href="./../static/css/style.css"> -->
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +20,7 @@
     <header id="header">
         <nav class="navegacion" id="nav-menu-container">
             <div id="contenedor_logo">
-                <img id="logo_img" src="img/logo.png" alt="logo" />
+                <img id="logo_img" src="img/logo.png" alt="logo" onclick="window.location.href='/PetWorld-Web/index.html'">
 
                 <ul class="nav-menu">
                     <li><a onclick="window.location.href='/PetWorld-Web/#hero'" style="cursor:pointer;">INICIO</a></li>
@@ -66,16 +65,14 @@
 
                 <div class="fila" style="margin-left: 20%">
                     <h4 id="lblNoCuenta">Aún no tienes una cuenta? </h4>
-                    <button id="lblCreaCuenta" onclick="window.location.href='/PetWorld-Web/registro.html'"> Crea una
-                        ahora
-                    </button>
+                    <h4 id="lblCreaCuenta" onclick="window.location.href='/PetWorld-Web/registro.html'"> Crea una ahora
+                    </h4>
                 </div>
 
             </div>
         </section>
     </main>
     <script>
-
         var UrlBackendJS = "http://localhost:5000";
 
         var btnIngresar = document.getElementById("btnIngresar");
@@ -94,6 +91,7 @@
                     if (data.status == 'SUCCESS') {
                         window.location.href = '/PetWorld-Web/#servicios';
                         localStorage.setItem("user", JSON.stringify(data.data[0]));
+
                     } else {
                         alert(data.message);
                     }

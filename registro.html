@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PetWorld</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="estilos.css" />
     <link rel="stylesheet" href="estilosRegistro.css" />
     <!-- <link rel="stylesheet" href="./../static/css/style.css"> -->
@@ -15,23 +15,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Red+Rose&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Rose&display=swap" rel="stylesheet" />
 </head>
 
 <body>
     <header id="header">
         <nav class="navegacion" id="nav-menu-container">
             <div id="contenedor_logo">
-                <img id="logo_img" src="img/logo.png" alt="logo" />
+                <img id="logo_img" src="img/logo.png" alt="logo" onclick="window.location.href='/PetWorld-Web/index.html'" />
 
                 <ul class="nav-menu">
-                    <li><a href="#hero">INICIO</a></li>
-                    <li><a href="#about">CONÓCENOS</a></li>
-                    <li><a href="#servicios">SERVICIOS</a></li>
-                    <li><a href="#contact">CONTÁCTANOS</a></li>
+                    <li><a href="index.html#hero">INICIO</a></li>
+                    <li><a href="index.html#conocenos">CONÓCENOS</a></li>
+                    <li><a href="index.html#servicios">SERVICIOS</a></li>
+                    <li><a href="index.html#contact">CONTÁCTANOS</a></li>
                 </ul>
             </div>
-            <button id="btn_inisesion" onclick="window.location.href='/PetWorld-Web/inicioSesion.html'">INICIAR SESION</button>
+            <button id="btn_inisesion" onclick="window.location.href='/PetWorld-Web/inicioSesion.html'">
+          INICIAR SESION
+        </button>
         </nav>
     </header>
 
@@ -44,22 +46,21 @@
         <section class="section">
             <div class="usuario">
                 <h4 id="lblDatosde">
-                    ------------------------- Datos de usuario:
-                    -------------------------
+                    ------------------------- Datos de usuario: -------------------------
                 </h4>
                 <div class="fila">
                     <form class="campo" style="width: 50%">
                         <input type="text" required id="nombre" />
                         <label class="datos">
-                            <span class="nombre_campo">Nombre</span>
-                        </label>
+                <span class="nombre_campo">Nombre</span>
+              </label>
                     </form>
 
                     <form class="campo" style="width: 50%">
                         <input type="text" required id="apellidos" />
                         <label class="datos">
-                            <span class="nombre_campo">Apellidos</span>
-                        </label>
+                <span class="nombre_campo">Apellidos</span>
+              </label>
                     </form>
                 </div>
 
@@ -67,22 +68,22 @@
                     <form class="campo" style="width: 25%">
                         <input type="number" required id="dni" />
                         <label class="datos">
-                            <span class="nombre_campo">DNI</span>
-                        </label>
+                <span class="nombre_campo">DNI</span>
+              </label>
                     </form>
 
                     <form class="campo" style="width: 25%">
                         <input type="number" required id="celular" />
                         <label class="datos">
-                            <span class="nombre_campo">Celular</span>
-                        </label>
+                <span class="nombre_campo">Celular</span>
+              </label>
                     </form>
 
                     <form class="campo" style="width: 50%">
                         <input type="text" required id="email" />
                         <label class="datos">
-                            <span class="nombre_campo">Email</span>
-                        </label>
+                <span class="nombre_campo">Email</span>
+              </label>
                     </form>
                 </div>
 
@@ -90,15 +91,15 @@
                     <form class="campo" style="width: 30%">
                         <input type="text" required id="distrito" />
                         <label class="datos">
-                            <span class="nombre_campo">Distrito</span>
-                        </label>
+                <span class="nombre_campo">Distrito</span>
+              </label>
                     </form>
 
                     <form class="campo" style="width: 70%">
                         <input type="text" required id="direccion" />
                         <label class="datos">
-                            <span class="nombre_campo">Dirección</span>
-                        </label>
+                <span class="nombre_campo">Dirección</span>
+              </label>
                     </form>
                 </div>
 
@@ -106,25 +107,23 @@
                     <form class="campo" style="width: 40%">
                         <input type="password" required id="contrasena" />
                         <label class="datos">
-                            <span class="nombre_campo">Contraseña</span>
-                        </label>
+                <span class="nombre_campo">Contraseña</span>
+              </label>
                     </form>
 
                     <div id="lblCantMascotas">Cantidad de mascotas:</div>
                     <form class="campo" style="width: 7%">
                         <input type="number" required id="n_mascotas" />
                         <label class="datos">
-                            <span class="nombre_campo"></span>
-                        </label>
+                <span class="nombre_campo"></span>
+              </label>
                     </form>
                 </div>
 
-
-                <button id="btnSiguiente" onclick="btnSiguiente()">
+                <div id="btnSiguiente" onclick="btnSiguiente()">
                     <h4 id="lblSiguiente">Siguiente</h4>
                     <img src="img/flechaSig.png" alt="flecha" />
-                </button>
-
+                </div>
             </div>
 
             <hr color="#EBEBEB" />
@@ -137,16 +136,16 @@
                     <form class="campo" style="width: 40%">
                         <input type="text" required id="nombre_mascota" />
                         <label class="datos">
-                            <span class="nombre_campo">Nombre</span>
-                        </label>
+                <span class="nombre_campo">Nombre</span>
+              </label>
                     </form>
 
                     <div id="lblEdad">Edad (en meses):</div>
                     <form class="campo" style="width: 15%">
                         <input type="number" required id="edad_mascota" />
                         <label class="datos">
-                            <span class="nombre_campo"></span>
-                        </label>
+                <span class="nombre_campo"></span>
+              </label>
                     </form>
                 </div>
 
@@ -154,16 +153,16 @@
                     <div id="lblTipoMascota">Tipo de Mascota:</div>
                     <div class="opciones">
                         <select name="tipo" style="width: 100%" id="sel_tipo_mascota">
-                            <option>Perro</option>
-                            <option>Gato</option>
-                        </select>
+                <option>Perro</option>
+                <option>Gato</option>
+              </select>
                     </div>
 
                     <form class="campo" style="width: 70%">
                         <input type="text" required id="raza" />
                         <label class="datos">
-                            <span class="nombre_campo">Raza</span>
-                        </label>
+                <span class="nombre_campo">Raza</span>
+              </label>
                     </form>
                 </div>
 
@@ -171,48 +170,45 @@
                     <div class="opciones">
                         <div id="lblMascota">Tamaño:</div>
                         <select name="tamano" style="width: 100%" id="sel_tamano_mascota">
-                            <option>Pequeño</option>
-                            <option>Mediano</option>
-                            <option>Grande</option>
-                        </select>
+                <option>Pequeño</option>
+                <option>Mediano</option>
+                <option>Grande</option>
+              </select>
                     </div>
 
                     <div class="opciones">
                         <div id="lblMascota">Pelaje:</div>
                         <select name="pelaje" style="width: 100%" id="sel_pelaje_mascota">
-                            <option>Corto</option>
-                            <option>Rizado</option>
-                            <option>Largo</option>
-                        </select>
+                <option>Corto</option>
+                <option>Rizado</option>
+                <option>Largo</option>
+              </select>
                     </div>
 
                     <div class="opciones">
                         <div id="lblMascota">Sexo:</div>
                         <select name="sexo" style="width: 100%" id="sel_sexo_mascota">
-                            <option>Macho</option>
-                            <option>Hembra</option>
-                        </select>
+                <option>Macho</option>
+                <option>Hembra</option>
+              </select>
                     </div>
                 </div>
 
-                <button id="btnSiguiente" onclick="btnSiguienteMascota()">
+                <div id="btnSiguiente" onclick="btnSiguienteMascota()">
                     <h4 id="lblSiguiente">Siguiente Mascota</h4>
                     <img src="img/flechaSig.png" alt="flecha" />
-                </button>
+                </div>
 
-                <button id="btnRegistro" onclick="registrar()">
-                    Registrarse
-                </button>
+                <button id="btnRegistro" onclick="registrar()">Registrarse</button>
             </div>
         </section>
     </main>
     <script>
-
         var UrlBackendJS = "http://localhost:5000";
 
         document.getElementById("divMascota").style.display = "none";
         var btnRegistro = document.getElementById("btnRegistro");
-        btnRegistro.style.display = "none";;
+        btnRegistro.style.display = "none";
         var nombre = document.getElementById("nombre");
         var apellidos = document.getElementById("apellidos");
         var dni = document.getElementById("dni");
@@ -239,15 +235,16 @@
                 document.getElementById("divMascota").style.display = "block";
                 n_mascotas.disabled = true;
                 nombre_mascota.focus();
+                if (n_mascotas.value == 1) {
+                    btnRegistro.style.display = "block";
+                }
             } else {
                 alert("Debe ingresar la cantidad de mascotas");
             }
-
         }
 
         function btnSiguienteMascota() {
             if (contador_btn_siguiente < n_mascotas.value) {
-
                 let elementoMascota = [
                     nombre_mascota.value,
                     edad_mascota.value,
@@ -255,8 +252,8 @@
                     sel_tipo_mascota.options[sel_tipo_mascota.selectedIndex].text,
                     sel_tamano_mascota.options[sel_tamano_mascota.selectedIndex].text,
                     sel_pelaje_mascota.options[sel_pelaje_mascota.selectedIndex].text,
-                    sel_sexo_mascota.options[sel_sexo_mascota.selectedIndex].text
-                ]
+                    sel_sexo_mascota.options[sel_sexo_mascota.selectedIndex].text,
+                ];
 
                 arrayMascotas.push(elementoMascota);
 
@@ -278,7 +275,6 @@
             }
         }
 
-
         function registrar() {
             let datosUsuario = {
                 dni: dni.value,
@@ -289,16 +285,15 @@
                 distrito: distrito.value,
                 email: email.value,
                 password: contrasena.value,
-                nombres: nombre.value
-            }
-            postData(UrlBackendJS + '/user/signup', datosUsuario)
-                .then(data => {
+                nombres: nombre.value,
+            };
+            postData(UrlBackendJS + "/user/signup", datosUsuario)
+                .then((data) => {
                     console.log(data);
                 })
                 .catch((error) => {
-                    console.log(error)
+                    console.log(error);
                 });
-
 
             let elementoMascota = [
                 nombre_mascota.value,
@@ -307,13 +302,13 @@
                 sel_tipo_mascota.options[sel_tipo_mascota.selectedIndex].text,
                 sel_tamano_mascota.options[sel_tamano_mascota.selectedIndex].text,
                 sel_pelaje_mascota.options[sel_pelaje_mascota.selectedIndex].text,
-                sel_sexo_mascota.options[sel_sexo_mascota.selectedIndex].text
-            ]
+                sel_sexo_mascota.options[sel_sexo_mascota.selectedIndex].text,
+            ];
             arrayMascotas.push(elementoMascota);
             for (let i = 0; i < arrayMascotas.length; i++) {
                 const element = arrayMascotas[i];
                 const mascotaPayload = {
-                    id_mascota: (dni.value * 100) + i,
+                    id_mascota: dni.value * 100 + i,
                     dni: dni.value,
                     edad: element[1],
                     nombre: element[0],
@@ -321,28 +316,29 @@
                     raza: element[2],
                     sexo: element[6],
                     tamano: element[4],
-                    tipo: element[3]
-                }
-                postData(UrlBackendJS + '/pet/registerpet', mascotaPayload)
-                    .then(data => {
+                    tipo: element[3],
+                };
+                postData(UrlBackendJS + "/pet/registerpet", mascotaPayload).then(
+                    (data) => {
                         console.log(data);
-                    });
+                    }
+                );
             }
 
-            window.location.href='/PetWorld-Web/inicioSesion.html';
+            window.location.href = "/PetWorld-Web/inicioSesion.html";
         }
 
-        async function postData(url = '', data) {
+        async function postData(url = "", data) {
             const response = await fetch(url, {
-                method: 'POST',
-                mode: 'cors',
-                cache: 'no-cache',
+                method: "POST",
+                mode: "cors",
+                cache: "no-cache",
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Credentials': 'true'
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Credentials": "true",
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(data),
             });
             return response.json();
         }

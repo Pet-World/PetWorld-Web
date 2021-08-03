@@ -24,7 +24,8 @@
     <header id="header">
         <nav class="navegacion" id="nav-menu-container">
             <div id="contenedor_logo">
-                <img id="logo_img" src="img/logo.png" alt="logo">
+                <img id="logo_img" src="img/logo.png" alt="logo"
+                    onclick="window.location.href='/PetWorld-Web/index.html'">
 
                 <ul class="nav-menu">
                     <li><a href="#hero">INICIO</a></li>
@@ -38,12 +39,12 @@
 
     </header>
 
-    <section id="hero" class="secciones">
+    <section id="hero">
         <div class="hero-contenedor">
             <div id="hero-contenedor-text">
                 <h1>Pet World</h1>
                 <h2>No más perros callejeros en un país de perros pitucos.<br>Palabra de Firulais.</h2>
-                <button class="btn-ver-mas">VER MÁS</button>
+                <a href="#conocenos"><button class="btn-ver-mas"> VER MÁS</button></a>
             </div>
         </div>
     </section>
@@ -68,77 +69,82 @@
                 </div>
 
                 <div id="col2-conocenos" class="columna2">
-                    <div id="equipo">
-                        <p>Nuestro Equipo</p>
-                    </div>
-                    <img id="fondo-puntos" src="img/fondo_puntos.png" alt="fondo">
-                    <div class="wrapper">
-                        <div class="outer">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="img"><img src="img/foto_David.png" alt=""></div>
-                                    <div class="details">
-                                        <span class="name">David Sanchez C.</span>
-                                        <p>Cardiología</p>
+                    <h3 id="equipo">Nuestro Equipo</h3>
+                    <!-- <img id="fondo-puntos" src="img/fondo_puntos.png" alt="fondo"> -->
+                    <!-- <div id="puntos">
+                    </div> -->
+
+                    <div id="fotos-equipo">
+                        <div class="wrapper">
+                            <div class="outer">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="img"><img src="img/foto_David.png" alt=""></div>
+                                        <div class="details">
+                                            <span class="name">David Sanchez C.</span>
+                                            <p>Cardiología</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <div class="content">
-                                    <div class="img"><img src="img/foto_Emmanuel.png" alt=""></div>
-                                    <div class="details">
-                                        <span class="name">Emmanuel Lapiz P.</span>
-                                        <p>Neurología</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrapper">
-                        <div class="outer">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="img"><img src="img/foto_Pierre.png" alt=""></div>
-                                    <div id="detailsPierre" class="details">
-                                        <span class="name">Pierre Ruiz C.</span>
-                                        <p>Cirugía</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="content">
-                                    <div class="img"><img src="img/foto_Julissa.png" alt=""></div>
-                                    <div id="detailsJulissa" class="details">
-                                        <span class="name">Julissa García C.</span>
-                                        <p>Fisioterapia</p>
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="img"><img src="img/foto_Emmanuel.png" alt=""></div>
+                                        <div class="details">
+                                            <span class="name">Emmanuel Lapiz P.</span>
+                                            <p>Neurología</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="wrapper">
-                        <div class="outer">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="img"><img src="img/foto_Carlos.png" alt=""></div>
-                                    <div class="details">
-                                        <span class="name">Carlos Rojas F.</span>
-                                        <p>Dermatología</p>
+                        <div class="wrapper">
+                            <div class="outer">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="img"><img src="img/foto_Pierre.png" alt=""></div>
+                                        <div id="detailsPierre" class="details">
+                                            <span class="name">Pierre Ruiz C.</span>
+                                            <p>Cirugía</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="img"><img src="img/foto_Julissa.png" alt=""></div>
+                                        <div id="detailsJulissa" class="details">
+                                            <span class="name">Julissa García C.</span>
+                                            <p>Fisioterapia</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="content">
-                                    <div class="img"><img src="img/foto_Piero.png" alt=""></div>
-                                    <div class="details">
-                                        <span class="name">Piero Estrada C.</span>
-                                        <p>Oncología</p>
+                        </div>
+                        <div class="wrapper">
+                            <div class="outer">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="img"><img src="img/foto_Carlos.png" alt=""></div>
+                                        <div class="details">
+                                            <span class="name">Carlos Rojas F.</span>
+                                            <p>Dermatología</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="img"><img src="img/foto_Piero.png" alt=""></div>
+                                        <div class="details">
+                                            <span class="name">Piero Estrada C.</span>
+                                            <p>Oncología</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+
+                    <!-- <img id="fondo-puntos" src="img/fondo_puntos.png" alt="fondo"> -->
                 </div>
             </div>
 
@@ -152,17 +158,20 @@
                 <div id="lista_servicios">
 
                     <div class="servicios_img">
-                        <img src="img/servicios_img1.png" alt="servicios_img1">
-
+                        <img src="img/servicios_img1.png" alt="servicios_img1"
+                            onclick="window.location.href='/PetWorld-Web/petshop.html'">
                     </div>
                     <div class="servicios_img">
-                        <img src="img/servicios_img2.png" alt="servicios_img2">
+                        <img src="img/servicios_img2.png" alt="servicios_img2"
+                            onclick="window.location.href='/PetWorld-Web/servicio1.html'">
                     </div>
                     <div class="servicios_img">
-                        <img src="img/servicios_img3.png" alt="servicios_img3">
+                        <img src="img/servicios_img3.png" alt="servicios_img3"
+                            onclick="window.location.href='/PetWorld-Web/servicio2.html'">
                     </div>
                     <div class="servicios_img">
-                        <img src="img/servicios_img4.png" alt="servicios_img4">
+                        <img src="img/servicios_img4.png" alt="servicios_img4"
+                            onclick="window.location.href='/PetWorld-Web/servicio3.html'">
                     </div>
                 </div>
                 <img id="fondo_servicios" src="img/fondo_servicios.png" alt="fondo_servicios">
