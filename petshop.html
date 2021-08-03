@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylePetshop.css">
+    <link rel="stylesheet" href="estilos.css">
     <title>PetShop</title>
 </head>
 
@@ -14,16 +15,16 @@
 
         <nav class="navegacion" id="nav-menu-container">
             <div id="contenedor_logo">
-                <img id="logo_img" src="img/logo.png" alt="logo">
+                <img id="logo_img" src="img/logo.png" alt="logo" onclick="window.location.href='/PetWorld-Web/index.html'">
 
                 <ul class="nav-menu">
-                    <li><a href="#hero">INICIO</a></li>
-                    <li><a href="#about">CONÓCENOS</a></li>
-                    <li><a href="#servicios">SERVICIOS</a></li>
-                    <li><a href="#contact">CONTÁCTANOS</a></li>
+                    <li><a href="index.html#hero">INICIO</a></li>
+                    <li><a href="index.html#conocenos">CONÓCENOS</a></li>
+                    <li><a href="index.html#servicios">SERVICIOS</a></li>
+                    <li><a href="index.html#contact">CONTÁCTANOS</a></li>
                 </ul>
             </div>
-            <button id="btn_inisesion">INICIAR SESION</button>
+            <button id="btn_inisesion" onclick="window.location.href='/PetWorld-Web/inicioSesion.html'">INICIAR SESION</button>
         </nav>
 
     </header>
@@ -37,17 +38,11 @@
         <img class="bck" src="img/bckp.png"></img>
         <img class="pets" src="img/petss.png"></img>
         <p class="prn">
-            Para llevar a su mascota a una consulta médica veterinaria, es necesario separar su cita, de acuerdo a la
-            disponibilidad del Médico de turno, coordinando a través de nuestra central telefónica.<br><br> Recuerde que
-            nuestro horario de atención
-            de consultas inicia a las 09am. y culmina a las 20hrs. Siendo la última cita a las 19:30hrs.<br><br> Para
-            que la atención de su mascota se desarrolle con tranquilidad y excelencia , le recomendamos asistir
-            puntualmente al consultorio.<br><br> En caso de no poder asistir a la consulta, lo recomendable es
-            comunicarse a nuestra Central de Citas, llamando al 01 223-2180 y reprogramar la fecha y hora de su
-            consulta.
+            Para llevar a su mascota a una consulta médica veterinaria, es necesario separar su cita, de acuerdo a la disponibilidad del Médico de turno, coordinando a través de nuestra central telefónica.<br><br> Recuerde que nuestro horario de atención
+            de consultas inicia a las 09am. y culmina a las 20hrs. Siendo la última cita a las 19:30hrs.<br><br> Para que la atención de su mascota se desarrolle con tranquilidad y excelencia , le recomendamos asistir puntualmente al consultorio.<br><br>            En caso de no poder asistir a la consulta, lo recomendable es comunicarse a nuestra Central de Citas, llamando al 01 223-2180 y reprogramar la fecha y hora de su consulta.
         </p>
         <div class="filtro">
-          <select name="cat" id="selCat" class="form-control"> 
+            <select name="cat" id="selCat" class="form-control"> 
             </select>
             <select name="brn" id="selBrand">
             </select>
@@ -57,12 +52,11 @@
         <ord>
             <txfind>Resultados Encontrados</txfind>
             <div name="divResult" id="products">
-                    
+
             </div>
         </ord>
     </section>
     <script>
-
         var UrlBackendJS = "http://localhost:5000";
 
         var sel_categoria = document.getElementsByName("cat")[0];
@@ -72,6 +66,7 @@
         var data;
         var dataFiltrada;
         var toShop = false;
+        var shopList = new Map();
 
         async function makeShop(url, data = {}) {
             // Opciones por defecto estan marcadas con un *
@@ -103,36 +98,36 @@
         }
 
         getData(UrlBackendJS + "/product/getProducts").then(response => {
-            data = response.data;
-            var categorias = [];
-            var marcas = [];
+                data = response.data;
+                var categorias = [];
+                var marcas = [];
 
-            for (let i = 0; i < data.length; i++) {
-                categorias.push(data[i].categoria);
-                marcas.push(data[i].marca);
-            }
+                for (let i = 0; i < data.length; i++) {
+                    categorias.push(data[i].categoria);
+                    marcas.push(data[i].marca);
+                }
 
-            var setCategorias = categorias.filter(function (item, pos, self) {
-                return self.indexOf(item) == pos;
-            });
-            var setMarcas = marcas.filter(function (item, pos, self) {
-                return self.indexOf(item) == pos;
-            });
+                var setCategorias = categorias.filter(function(item, pos, self) {
+                    return self.indexOf(item) == pos;
+                });
+                var setMarcas = marcas.filter(function(item, pos, self) {
+                    return self.indexOf(item) == pos;
+                });
 
 
 
-            for (let i = 0; i < setCategorias.length; i++) {
-                let option = document.createElement("option");
-                option.text = setCategorias[i];
-                sel_categoria.appendChild(option);
-            }
-            for (let i = 0; i < setMarcas.length; i++) {
-                let option = document.createElement("option");
-                option.text = setMarcas[i];
-                sel_marca.appendChild(option);
-            }
+                for (let i = 0; i < setCategorias.length; i++) {
+                    let option = document.createElement("option");
+                    option.text = setCategorias[i];
+                    sel_categoria.appendChild(option);
+                }
+                for (let i = 0; i < setMarcas.length; i++) {
+                    let option = document.createElement("option");
+                    option.text = setMarcas[i];
+                    sel_marca.appendChild(option);
+                }
 
-        })
+            })
             .catch((error) => {
                 console.log(error)
                 console.log("ocurrio un error")
@@ -145,12 +140,12 @@
                 document.getElementById("textPrice").value == "" ? 1000 : document.getElementById("textPrice").value
             ];
 
-            dataFiltrada = data.filter(function (el) {
+            dataFiltrada = data.filter(function(el) {
                 return el.categoria == opcionesSeleccionadas[0] &&
                     el.marca == opcionesSeleccionadas[1] &&
                     el.precio <= opcionesSeleccionadas[2];
             });
-            
+
             // eliminamos los hijos antes existentes
             let len = divResult.childElementCount;
             let child = divResult.lastElementChild;
@@ -177,15 +172,14 @@
                     let img = document.createElement("img");
                     let precio = document.createElement("span");
                     let nombre = document.createElement("span");
-                    let marca= document.createElement("span");
-                    let button = document.createElement("button");
+                    let marca = document.createElement("span");
                     let menos = document.createElement("menos");
-                    let mas= document.createElement("mas");
+                    let mas = document.createElement("mas");
                     let recnt = document.createElement("recnt");
 
                     divProduct.className = "product";
                     divPrDesc.className = "prDesc";
-                    precio.innerHTML = element.precio;
+                    precio.innerHTML = "S/." + element.precio;
                     precio.className = "prPrice";
                     nombre.innerHTML = element.nombre;
                     nombre.className = "prName";
@@ -195,12 +189,15 @@
                     img.alt = "";
                     img.className = "productImg";
 
-
-                    button.innerText = "Comprar";
-                    button.addEventListener("click", function () {
-                        shopProduct(element)
+                    mas.addEventListener("click", function() {
+                        addProduct(element)
+                        updCont(element, recnt)
                     });
 
+                    menos.addEventListener("click", function() {
+                        rmvProduct(element)
+                        updCont(element, recnt)
+                    });
                     divPrDesc.appendChild(precio);
                     divPrDesc.appendChild(nombre);
                     divPrDesc.appendChild(marca);
@@ -210,21 +207,35 @@
                     divProduct.appendChild(menos);
                     divProduct.appendChild(recnt);
                     divProduct.appendChild(mas);
-                    divProduct.appendChild(button);
-                
+
                     divResult.appendChild(divProduct);
 
                 }
             }
         }
 
-        function shopProduct(productDataToShop) {
-            console.log("Producto comprado!");
-            console.log(productDataToShop)
-            /* makeShop(UrlBackendJS + '', { data: productDataToShop })
-                .then(response=> {
-                    console.log(response); // JSON data parsed by `data.json()` call
-                }) */
+        function updCont(prd, elCont) {
+            var id = shopList.get(prd.id_producto.cant)
+            console.log(id)
+            elCont.innerHTML = id
+        }
+
+        function addProduct(productDataToAdd) {
+            console.log("Producto agregado!");
+            console.log(productDataToAdd)
+            var n = shopList.get(productDataToAdd.id_producto)
+            shopList.set(productDataToAdd.id_producto, {
+                    cant: n + 1
+                })
+                /* makeShop(UrlBackendJS + '', { data: productDataToShop })
+                    .then(response=> {
+                        console.log(response); // JSON data parsed by `data.json()` call
+                    }) */
+        }
+
+        function rmvProduct(productDataToRmv) {
+            console.log("Producto removido!");
+
         }
     </script>
 </body>

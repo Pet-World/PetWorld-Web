@@ -1,80 +1,163 @@
 <html>
+
 <head>
-<link rel="stylesheet" href="styleServ2.css">
-<title>servicio2</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styleServ2.css">
+    <link rel="stylesheet" href="styleSoliServicios.css">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>servicio2</title>
 </head>
 
-<body>   
+<body>
     <header id="header">
-    <nav class="navegacion" id="nav-menu-container">
-        <div id="contenedor_logo">
-            <img id="logo_img" src="img/logo.png" alt="logo">
+        <nav class="navegacion" id="nav-menu-container">
+            <div id="contenedor_logo">
+                <img id="logo_img" src="img/logo.png" alt="logo" onclick="window.location.href='/PetWorld-Web/index.html'">
 
-            <ul class="nav-menu">
-                <li><a href="#hero">INICIO</a></li>
-                <li><a href="#about">CONÓCENOS</a></li>
-                <li><a href="#servicios">SERVICIOS</a></li>
-                <li><a href="#contact">CONTÁCTANOS</a></li>
-            </ul>
+                <ul class="nav-menu">
+                    <li><a href="index.html#hero">INICIO</a></li>
+                    <li><a href="index.html#conocenos">CONÓCENOS</a></li>
+                    <li><a href="index.html#servicios">SERVICIOS</a></li>
+                    <li><a href="index.html#contact">CONTÁCTANOS</a></li>
+                </ul>
+            </div>
+            <button id="btn_inisesion" onclick="window.location.href='/PetWorld-Web/inicioSesion.html'">INICIAR SESION</button>
+        </nav>
+
+    </header>
+    <section id="noh">
+        <rect></rect>
+        <h1>Medicina Interna</h1>
+        <img class="bone" src="img/bone.png"></img>
+        <img class="med" src="img/botiq.png"></img>
+        <img class="pet" src="img/pets2.png"></img>
+        <t1>TOME EN CUENTA ACERCA DE</t1>
+        <t2>LA CONSULTA VETERINARIA</t2>
+        <tServ>
+            <t3>CONOZCA NUESTROS</t3>
+            <t4>EXÁMENES PREVENTIVOS</t4>
+            <img class="tab" src="img/tabla.png"></img>
+        </tServ>
+
+        <p class="pr"> Para llevar a su mascota a una consulta médica veterinaria, tiene que estar registrado en la plataforma web, reservar los servicios que desee y nosotros le llamaremos para confirmar la fecha y hora disponible para su cita.
+            <br><br> Recuerde que nuestro horario de atención de consultas inicia a las 09am. y culmina a las 20hrs. Siendo la última cita a las 19:30hrs.
+            <br><br> Para que la atención de su mascota se desarrolle con tranquilidad y excelencia, le recomendamos asistir puntualmente al consultorio.
+            <br><br> En caso de no poder asistir a la consulta, lo recomendable es comunicarse a nuestra Central de Citas, llamando al 01 223-2180 y reprogramar la fecha y hora de su consulta.
+        </p>
+        <r2></r2>
+        <bt data-toggle="modal" data-target="#myModal">SOLICITAR</bt>
+        <cir>
+            <img class="cart" src="img/cart.png"></img>
+        </cir>
+        <g22>
+            <hr class="lis" style="top: 49px;">
+            <hr class="lis" style="top: 98px;">
+            <hr class="lis" style="top: 148px;">
+            <hr class="lis" style="top: 197px;">
+            <hr class="lis" style="top: 247px;">
+            <hr class="lis" style="top: 296px;">
+            <img class="trv" src="img/triv.png" style="top: 18px;"></img>
+            <img class="trv" src="img/triv.png" style="top: 67px;"></img>
+            <img class="trv" src="img/triv.png" style="top: 116px;"></img>
+            <img class="trv" src="img/triv.png" style="top: 165px;"></img>
+            <img class="trv" src="img/triv.png" style="top: 214px;"></img>
+            <img class="trv" src="img/triv.png" style="top: 263px;"></img>
+            <img class="trv" src="img/triv.png" style="top: 312px;"></img>
+            <lista>Placas de Rayos X<br> Traumatología
+                <br> Profilaxis dental<br> Citologías de masas, oídos y piel <br> Histopatologías <br>Otoscopias digitales<br> Rinoscopias digitales
+            </lista>
+
+            <r3></r3>
+
+        </g22>
+        <g23>
+            <recnt><input type="checkbox" id="cbox1" value="1_cb"></recnt>
+            <recnt style="top: 50px;"><input type="checkbox" id="cbox2" value="2_cb"></recnt>
+            <recnt style="top: 96px;"> <input type="checkbox" id="cbox3" value="3_cb"></recnt>
+            <recnt style="top: 146px;"><input type="checkbox" id="cbox4" value="4_cb"></recnt>
+            <recnt style="top: 195px;"><input type="checkbox" id="cbox5" value="5_cb"></recnt>
+            <recnt style="top: 245px;"><input type="checkbox" id="cbox6" value="6_cb"></recnt>
+            <recnt style="top: 295px;"><input type="checkbox" id="cbox7" value="7_cb"></recnt>
+        </g23>
+
+
+
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div id="contenedor-boleta" class="modal-content">
+                <div id="fila">
+                    <h2 id="titulo-boleta">Solicitud de Servicio</h2>
+                    <button id="exit" data-dismiss="modal"><img src="img/exit.png" alt=""></button>
+                </div>
+                <div class="columna1">
+                    <div class="columna1" id="col1">
+                        <fieldset>
+                            <legend>Nombre(s)</legend>
+                            <input readonly onmousedown="return false;" type="text" name="nombre" id="nombre">
+                        </fieldset>
+                        <fieldset>
+                            <legend>DNI</legend>
+                            <input readonly onmousedown="return false;" type="text" name="dni" id="dni">
+                        </fieldset>
+                        <fieldset>
+                            <legend>Telefono Fijo</legend>
+                            <input readonly onmousedown="return false;" type="text" name="fijo" id="fijo">
+                        </fieldset>
+                        <fieldset>
+                            <legend>Telefono Movil</legend>
+                            <input readonly onmousedown="return false;" type="text" name="movil" id="movil">
+                        </fieldset>
+                    </div>
+                    <div class="columna2" id="col2">
+
+                        <fieldset>
+                            <legend>Apellido(s)</legend>
+                            <input readonly onmousedown="return false;" type="text" name="apellidos" id="apellidos">
+                        </fieldset>
+
+
+                        <fieldset id="cuadro_mascota">
+                            <legend>Mascota</legend>
+                            <input readonly onmousedown="return false;" type="text" name="mascota" id="mascota">
+                        </fieldset>
+
+                    </div>
+                    <fieldset class="cuadro-inline" id="cuadro-email">
+                        <legend>E-mail</legend>
+                        <input readonly onmousedown="return false;" type="text" name="email" id="email">
+                    </fieldset>
+                    <fieldset class="cuadro-inline">
+                        <legend>Sugerencia de fecha para la cita</legend>
+                        <input type="text" name="sugerencia" id="sugerencia">
+                    </fieldset>
+                </div>
+                <div class="columna2">
+                    <fieldset id="cuadro_resumen">
+                        <legend>Resumen de solicitud de compra</legend>
+                        <input type="text" name="resumen" id="resumen">
+                    </fieldset>
+                    <div class="text-input">
+                        <input readonly onmousedown="return false;" type="number" name="total" id="total">
+                        <h3>Total:</h3>
+                    </div>
+                    <div class="text-input">
+                        <input type="number" name="efectivo" id="efectivo">
+                        <h3>Efectivo para pago:</h3>
+                    </div>
+                </div>
+                <p id="importante"><span>IMPORTANTE : </span>Tomar en cuenta las condiciones y pasos para la solicitud, movilidad y pago de un servicio</p>
+                <button id="enviar" data-dismiss="modal">ENVIAR</button>
+            </div>
         </div>
-        <button id="btn_inisesion" onclick="window.location.href='/PetWorld-Web/inicioSesion.html'">INICIAR SESION</button>
-    </nav>
 
-</header>
-<section id="noh">
-    <rect></rect> 
-    <h1>Medicina Interna</h1>
-    <img class="bone" src="img/bone.png"></img> 
-    <img class="med" src="img/botiq.png"></img>
-    <img class="tab" src="img/tabla.png"></img>
-    <img class="pet" src="img/pets2.png"></img>
-    <img class="cart" src="img/cart.png"></img>
-    <t1>TOME EN CUENTA ACERCA DE</t1>
-    <t2>LA CONSULTA VETERINARIA</t2>
-    <t3>CONOZCA NUESTROS</t3>
-    <t4>EXÁMENES INTERNOS</t4>
-    
-    <p class="pr"> Para llevar a su mascota a una consulta médica veterinaria, tiene que estar registrado en la plataforma web, reservar los servicios que desee y nosotros le llamaremos para confirmar la fecha y hora disponible para su cita.
-        <br><br>        Recuerde que nuestro horario de atención de consultas inicia a las 09am. y culmina a las 20hrs. Siendo la última cita a las 19:30hrs.
-        <br><br>        Para que la atención de su mascota se desarrolle con tranquilidad y excelencia, le recomendamos asistir puntualmente al consultorio.
-        <br><br>        En caso de no poder asistir a la consulta, lo recomendable es comunicarse a nuestra Central de Citas, llamando al 01 223-2180 y reprogramar la fecha y hora de su consulta.
-    </p>      
-    <r2></r2>
-    <bt>SOLICITAR</bt>
-    <cir></cir>
-    <g22>
-            <hr class="lis" style="top: 49px;" >
-            <hr class="lis" style="top: 98px;" >
-            <hr class="lis" style="top: 148px;" >
-            <hr class="lis" style="top: 197px;" >
-            <hr class="lis" style="top: 247px;" >
-            <hr class="lis" style="top: 296px;" >
-            <img class="trv" src="img/triv.png" style="top: 18px;" ></img>
-            <img class="trv" src="img/triv.png" style="top: 67px;" ></img>
-            <img class="trv" src="img/triv.png" style="top: 116px;" ></img>
-            <img class="trv" src="img/triv.png" style="top: 165px;" ></img>
-            <img class="trv" src="img/triv.png" style="top: 214px;" ></img>
-            <img class="trv" src="img/triv.png" style="top: 263px;" ></img>
-            <img class="trv" src="img/triv.png" style="top: 312px;" ></img>
-            <lista>Placas de Rayos X<br> 
-                Traumatología<br>
-                Profilaxis dental<br>
-                Citologías de masas, oídos y piel <br>
-                Histopatologías <br>Otoscopias digitales<br> Rinoscopias digitales
-             </lista>
-        
-          <r3></r3>
-       
-    </g22>
-    <g23>
-        <recnt><input type="checkbox" id="cbox1" value="1_cb"></recnt>
-        <recnt style="top: 50;"><input type="checkbox" id="cbox2" value="2_cb"></recnt>
-        <recnt style="top: 96;"> <input type="checkbox" id="cbox3" value="3_cb"></recnt>
-        <recnt style="top: 146;"><input type="checkbox" id="cbox4" value="4_cb"></recnt>
-        <recnt style="top: 195;"><input type="checkbox" id="cbox5" value="5_cb"></recnt>
-        <recnt style="top: 245;"><input type="checkbox" id="cbox6" value="6_cb"></recnt>
-        <recnt style="top: 295;"><input type="checkbox" id="cbox7" value="7_cb"></recnt>
-    </g23>
-</section>
+    </section>
 </body>
+
 </html>
