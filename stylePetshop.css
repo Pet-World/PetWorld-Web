@@ -62,13 +62,18 @@ main {
     float: left;
     width: 49%;
     /*     height: 72%; */
-    height: 30rem;
+    height: 28rem;
 }
 
 .columna2 {
     float: right;
     width: 49.5%;
     height: 76%;
+}
+
+#col1,
+#col2 {
+    height: 95%;
 }
 
 fieldset {
@@ -120,11 +125,6 @@ select {
     outline: none;
     margin-left: 8px;
     width: 90%;
-}
-
-#col1,
-#col2 {
-    height: 90%;
 }
 
 .cuadro-inline {
