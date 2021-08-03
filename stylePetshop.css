@@ -356,3 +356,33 @@ recnt {
     order: 0;
     flex-grow: 0;
 }
+
+r2 {
+    position: absolute;
+    width: 176px;
+    height: 49px;
+    left: calc(50% - 176px/2);
+    top: 528px;
+    background: #C4C4C4;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+bt {
+    position: absolute;
+    width: 112px;
+    height: 30px;
+    left: calc(50% - 112px/2);
+    top: 538px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    /* identical to box height, or 136% */
+    letter-spacing: 0.02em;
+    color: #000000;
+    cursor: pointer;
+}
