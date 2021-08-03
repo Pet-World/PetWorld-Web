@@ -85,6 +85,7 @@ fieldset {
 legend {
     width: auto !important;
     border-bottom: 0 !important;
+    margin-bottom: 0 !important;
     color: rgba(0, 0, 0, 0.5);
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -125,6 +126,7 @@ input {
 }
 
 #cuadro_resumen {
+    overflow-y: scroll;
     float: right;
     width: 95%;
     height: 64%;

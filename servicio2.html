@@ -19,8 +19,7 @@
     <header id="header">
         <nav class="navegacion" id="nav-menu-container">
             <div id="contenedor_logo">
-                <img id="logo_img" src="img/logo.png" alt="logo"
-                    onclick="window.location.href='/PetWorld-Web/index.html'">
+                <img id="logo_img" src="img/logo.png" alt="logo" onclick="window.location.href='/PetWorld-Web/index.html'">
 
                 <ul class="nav-menu">
                     <li><a href="index.html#hero">INICIO</a></li>
@@ -48,15 +47,10 @@
             <img class="tab" src="img/tabla.png"></img>
         </tServ>
 
-        <p class="pr"> Para llevar a su mascota a una consulta médica veterinaria, tiene que estar registrado en la
-            plataforma web, reservar los servicios que desee y nosotros le llamaremos para confirmar la fecha y hora
-            disponible para su cita.
-            <br><br> Recuerde que nuestro horario de atención de consultas inicia a las 09am. y culmina a las 20hrs.
-            Siendo la última cita a las 19:30hrs.
-            <br><br> Para que la atención de su mascota se desarrolle con tranquilidad y excelencia, le recomendamos
-            asistir puntualmente al consultorio.
-            <br><br> En caso de no poder asistir a la consulta, lo recomendable es comunicarse a nuestra Central de
-            Citas, llamando al 01 223-2180 y reprogramar la fecha y hora de su consulta.
+        <p class="pr"> Para llevar a su mascota a una consulta médica veterinaria, tiene que estar registrado en la plataforma web, reservar los servicios que desee y nosotros le llamaremos para confirmar la fecha y hora disponible para su cita.
+            <br><br> Recuerde que nuestro horario de atención de consultas inicia a las 09am. y culmina a las 20hrs. Siendo la última cita a las 19:30hrs.
+            <br><br> Para que la atención de su mascota se desarrolle con tranquilidad y excelencia, le recomendamos asistir puntualmente al consultorio.
+            <br><br> En caso de no poder asistir a la consulta, lo recomendable es comunicarse a nuestra Central de Citas, llamando al 01 223-2180 y reprogramar la fecha y hora de su consulta.
         </p>
         <r2></r2>
         <bt data-toggle="modal" data-target="#myModal" onclick="solicitar()">SOLICITAR</bt>
@@ -75,8 +69,8 @@
             <img class="trv" src="img/triv.png" style="top: 263px;"></img>
             <img class="trv" src="img/triv.png" style="top: 312px;"></img>
             <lista>Placas de Rayos X<br> Traumatología
-                <br> Profilaxis dental<br> Citologías de masas, oídos y piel <br> Histopatologías <br>Otoscopias
-                digitales<br> Rinoscopias digitales
+                <br> Profilaxis dental<br> Citologías de masas, oídos y piel <br> Histopatologías <br>Otoscopias digitales
+                <br> Rinoscopias digitales
             </lista>
 
             <r3></r3>
@@ -144,11 +138,10 @@
                     </fieldset>
                     <div class="text-input">
                         <input readonly onmousedown="return false;" type="text" name="total" id="total">
-                        <h3>Total:</h3>
+                        <h3>Total (S/.):</h3>
                     </div>
                 </div>
-                <p id="importante"><span>IMPORTANTE : </span>Tomar en cuenta las condiciones y pasos para la solicitud,
-                    movilidad y pago de un servicio</p>
+                <p id="importante"><span>IMPORTANTE : </span>Tomar en cuenta las condiciones y pasos para la solicitud, movilidad y pago de un servicio</p>
                 <button id="enviar" data-dismiss="modal" onclick="enviar()">ENVIAR</button>
             </div>
         </div>
@@ -215,18 +208,18 @@
 
                 // obtenemos las mascotas de acuerdo al dni del usuario
                 getData(UrlBackendJS + `/pet/getPetsByDni?dni=${dni.value}`).then(response => {
-                    let data = response.data;
-                    for (let index = 0; index < data.length; index++) {
-                        const element = data[index];
-                        mascotas.push([element.nombre, element.id_mascota]);
-                    }
-                    for (let i = 0; i < mascotas.length; i++) {
-                        let option = document.createElement("option");
-                        option.text = mascotas[i][0];
-                        sel_mascota_nombre.appendChild(option);
-                    }
-                    sel_mascota_nombre.selectedIndex = 0;
-                })
+                        let data = response.data;
+                        for (let index = 0; index < data.length; index++) {
+                            const element = data[index];
+                            mascotas.push([element.nombre, element.id_mascota]);
+                        }
+                        for (let i = 0; i < mascotas.length; i++) {
+                            let option = document.createElement("option");
+                            option.text = mascotas[i][0];
+                            sel_mascota_nombre.appendChild(option);
+                        }
+                        sel_mascota_nombre.selectedIndex = 0;
+                    })
                     .catch((error) => {
                         console.log(error);
                         console.log("ocurrio un error");
@@ -245,22 +238,24 @@
                 var precioTotal = 0;
                 id_servicios_seleccionados.forEach(id_service => {
                     getData(UrlBackendJS + `/service/getService?id_servicio=${id_service}`).then(response => {
-                        let data = response.data[0];
-                        let div = document.createElement("div");
-                        let h5_nombre_servicio = document.createElement("h5");
-                        let h6_precio_servicio = document.createElement("h6");
+                            let data = response.data[0];
+                            let div = document.createElement("div");
+                            let h5_nombre_servicio = document.createElement("h5");
+                            let h6_precio_servicio = document.createElement("h6");
 
-                        div.style = "flex-direction:row;align-items:center;";
-                        h5_nombre_servicio.innerHTML = data.especificacion;
-                        h6_precio_servicio.innerHTML = data.precio;
+                            div.style = "display:flex; text-align: right; align-items:center;";
+                            h5_nombre_servicio.style = "width: 400px";
+                            h6_precio_servicio.style = "width: 100px";
+                            h5_nombre_servicio.innerHTML = data.especificacion;
+                            h6_precio_servicio.innerHTML = data.precio;
 
-                        div.appendChild(h5_nombre_servicio);
-                        div.appendChild(h6_precio_servicio);
-                        resumen.appendChild(div);
+                            div.appendChild(h5_nombre_servicio);
+                            div.appendChild(h6_precio_servicio);
+                            resumen.appendChild(div);
 
-                        precioTotal += data.precio;
-                        total.value = String(parseFloat(precioTotal)) + '  soles';
-                    })
+                            precioTotal += data.precio;
+                            total.value = String(parseFloat(precioTotal));
+                        })
                         .catch((error) => {
                             console.log(error)
                             console.log("ocurrio un error")
@@ -327,4 +322,5 @@
         }
     </script>
 </body>
+
 </html>

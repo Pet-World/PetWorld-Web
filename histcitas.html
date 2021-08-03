@@ -1,112 +1,276 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="es">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="estilos.css">
-        <link rel="stylesheet" href="styleHistcitas.css">
-        <title>PetShop</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="styleHistcitas.css">
+    <title>PetShop</title>
+</head>
 
-    <body>
-        <header id="header">
-            <nav class="navegacion" id="nav-menu-container">
-                <div id="contenedor_logo">
-                    <img id="logo_img" src="img/logo.png" alt="logo" onclick="window.location.href='/PetWorld-Web/index.html'">
+<body>
+    <header id="header">
+        <nav class="navegacion" id="nav-menu-container">
+            <div id="contenedor_logo">
+                <img id="logo_img" src="img/logo.png" alt="logo" onclick="window.location.href='/PetWorld-Web/index.html'">
 
-                    <ul class="nav-menu">
-                        <li><a href="index.html#hero">INICIO</a></li>
-                        <li><a href="index.html#conocenos">CONÓCENOS</a></li>
-                        <li><a href="index.html#servicios">SERVICIOS</a></li>
-                        <li><a href="index.html#contact">CONTÁCTANOS</a></li>
-                    </ul>
-                </div>
-                <button id="btn_inisesion">INICIAR SESION</button>
-            </nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html#hero">INICIO</a></li>
+                    <li><a href="index.html#conocenos">CONÓCENOS</a></li>
+                    <li><a href="index.html#servicios">SERVICIOS</a></li>
+                    <li><a href="index.html#contact">CONTÁCTANOS</a></li>
+                </ul>
+            </div>
+            <button id="btn_inisesion" onclick="changeState()">INICIAR SESION</button>
+        </nav>
 
-        </header>
-        <section id="noh">
-            <rect></rect>
-            <h1>Mi Perfil</h1>
-            <img class="bone" src="img/bone.png"></img>
-            <rect2></rect2>
-            <tit> Historial de Citas</tit>
-            <opbx1></opbx1>
-            <a href="histcompras.html#noh">
-                <opbx2 style="cursor: pointer;"></opbx2>
-            </a>
-            <a href="histcitas.html#noh">
-                <opbx3 style="cursor: pointer;"></opbx3>
-            </a>
-            <opbx4></opbx4>
-            <a href="#misdatos">
-                <opt1>Mis datos</opt1>
-            </a>
-            <a href="histcompras.html#noh">
-                <opt2>Historial de Compras</opt2>
-            </a>
-            <a href="histcitas.html#noh">
-                <opt3>Historial de citas</opt3>
-            </a>
-            <a href="#cerrars">
-                <opt4>Cerrar Sesión</opt4>
-            </a>
+    </header>
+    <section id="noh">
+        <rect></rect>
+        <h1>Mi Perfil</h1>
+        <img class="bone" src="img/bone.png"></img>
+        <rect2></rect2>
+        <tit> Historial de Citas</tit>
+        <opbx1></opbx1>
+        <a href="histcompras.html#noh">
+            <opbx2 style="cursor: pointer;"></opbx2>
+        </a>
+        <a href="histcitas.html#noh">
+            <opbx3 style="cursor: pointer;"></opbx3>
+        </a>
+        <opbx4></opbx4>
+        <a href="#misdatos">
+            <opt1>Mis datos</opt1>
+        </a>
+        <a href="histcompras.html#noh">
+            <opt2>Historial de Compras</opt2>
+        </a>
+        <a href="histcitas.html#noh">
+            <opt3>Historial de citas</opt3>
+        </a>
+        <a href="#cerrars">
+            <opt4>Cerrar Sesión</opt4>
+        </a>
 
-            <section id="lcitas">
-                <img class="trv" src="img/triv.png"></img>
-                <lm>Chequeos médicos preventivos </lm>
-                <div class="stars">
-                    <img id="1estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
-                    <img id="2estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
-                    <img id="3estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
-                    <img id="4estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
-                    <img id="5estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
-                </div>
+        <div id="resumen">
+        </div>
+        <!-- <section id="lcitas">
+            <img class="trv" src="img/triv.png"></img>
+            <lm>Chequeos médicos preventivos </lm>
+            <div class="stars" id="group-estrellas">
+                <img id="1estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
+                <img id="2estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
+                <img id="3estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
+                <img id="4estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
+                <img id="5estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
+            </div>
 
-            </section>
-        </section>
+        </section> -->
+    </section>
 
-    </body>
+</body>
 
-    <script>
-        var UrlBackendJS = "http://localhost:5000 ";
+<script>
+    var UrlBackendJS = "http://localhost:5000";
+    let citas = [];
+    let id_servicios = [];
+    let valoraciones = [];
+    let count = 0;
+    var ultimo;
+    var contador;
+    var click = false;
+    var valorado = false;
+    var resumen = document.getElementById("resumen");
+    var btnSession = document.getElementById("btn_inisesion");
 
-        var contador;
-        var click = false;
-        var valorado = false;
+    var userCurrent = localStorage.getItem("user") == "" ? "" : JSON.parse(localStorage.getItem("user"));
+    if (userCurrent) {
+        btnSession.innerHTML = "CERRAR SESIÓN";
+    } else {
+        btnSession.innerHTML = "INICIAR SESIÓN";
+    }
 
-        function valorar(item) {
-            if (!valorado) {
-                cambio(item, "img/colorStar.png ");
-            };
-            click = true;
-            valorado = true;
+    var dni = userCurrent.dni;
+
+    function changeState() {
+        if (btnSession.innerHTML == 'CERRAR SESIÓN') {
+            localStorage.setItem("user", "");
+            btnSession.innerHTML = "INICIAR SESIÓN";
+            window.location.href = '/PetWorld-Web/servicio1.html';
+        } else {
+            window.location.href = '/PetWorld-Web/inicioSesion.html';
         }
+    }
 
-        function restaurar(item) {
-            if (!click) {
-                cambio(item, "img/star.png ");
+    function valorar(item) {
+        ultimo = item.id[item.id.length - 1];
+        if (valoraciones[ultimo] == 0) {
+            cambio(item, "img/colorStar.png");
+            valoraciones[ultimo] = item.id[0];
+            console.log(valoraciones);
+        };
+    }
+
+    function restaurar(item) {
+        ultimo = item.id[item.id.length - 1];
+        if (valoraciones[ultimo] == 0) {
+            cambio(item, "img/star.png");
+        }
+    }
+
+    function cambiar(item) {
+        ultimo = item.id[item.id.length - 1];
+        if (valoraciones[ultimo] == 0) {
+            cambio(item, "img/colorStar.png");
+        }
+    }
+
+    function cambio(item, imagen) {
+        contador = item.id[0];
+        let nombre = item.id.substring(1);
+        for (let i = 0; i < 5; i++) {
+            if (i < contador) {
+                document.getElementById((i + 1) + nombre).src = imagen;
             }
         }
+    }
 
-        function cambiar(item) {
-            if (!click) {
-                cambio(item, "img/colorStar.png ");
-            }
-        }
+    // obtenemos las citas de acuerdo al dni del usuario
+    getData(UrlBackendJS + `/historycite/getHistoryByDni?dni=${dni}`).then(response => {
 
-        function cambio(item, imagen) {
-            contador = item.id[0];
-            let nombre = item.id.substring(1);
-            console.log(contador);
-            console.log(nombre);
-            for (let i = 0; i < 5; i++) {
-                if (i < contador) {
-                    document.getElementById((i + 1) + nombre).src = imagen;
-                }
+            let data = response.data;
+            for (let index = 0; index < data.length; index++) {
+                const element = data[index];
+
+                citas.push([element.id_servicio, element.valoracion, element.id_historial]);
             }
-        }
-    </script>
-    </html>
+            for (let i = 0; i < citas.length; i++) {
+                id_servicios.push(citas[i][0]);
+                valoraciones.push(citas[i][1])
+            }
+
+            id_servicios.forEach(id_service => {
+                getData(UrlBackendJS + `/service/getService?id_servicio=${id_service}`).then(response => {
+                        let data = response.data[0];
+                        let div = document.createElement("div");
+                        let h5_nombre_servicio = document.createElement("h5");
+                        h5_nombre_servicio.innerHTML = data.especificacion;
+                        console.log(data.especificacion)
+                        let div_stars = document.createElement("div");
+                        let flecha = document.createElement("img");
+                        flecha.src = "img/triv.png";
+                        let estrella1 = document.createElement("img");
+                        estrella1.src = "img/star.png";
+                        estrella1.id = "1estrella" + String(count);
+                        let estrella2 = document.createElement("img");
+                        estrella2.src = "img/star.png";
+                        estrella2.id = "2estrella" + String(count);
+                        let estrella3 = document.createElement("img");
+                        estrella3.src = "img/star.png";
+                        estrella3.id = "3estrella" + String(count);
+                        let estrella4 = document.createElement("img");
+                        estrella4.src = "img/star.png";
+                        estrella4.id = "4estrella" + String(count);
+                        let estrella5 = document.createElement("img");
+                        estrella5.src = "img/star.png";
+                        estrella5.id = "5estrella" + String(count);
+
+
+                        // let h6_precio_servicio = document.createElement("h6");
+
+                        div.id = "lcitas";
+                        flecha.id = "trv";
+                        h5_nombre_servicio.id = "lm";
+                        div_stars.id = "stars";
+                        // click
+                        estrella1.addEventListener("click", function() {
+                            valorar(estrella1)
+                        });
+                        estrella2.addEventListener("click", function() {
+                            valorar(estrella2)
+                        });
+                        estrella3.addEventListener("click", function() {
+                            valorar(estrella3)
+                        });
+                        estrella4.addEventListener("click", function() {
+                            valorar(estrella4)
+                        });
+                        estrella5.addEventListener("click", function() {
+                            valorar(estrella5)
+                        });
+                        // onmouseover
+                        estrella1.addEventListener("mouseover", function() {
+                            cambiar(estrella1);
+                        });
+                        estrella2.addEventListener("mouseover", function() {
+                            cambiar(estrella2);
+                        });
+                        estrella3.addEventListener("mouseover", function() {
+                            cambiar(estrella3)
+                        });
+                        estrella4.addEventListener("mouseover", function() {
+                            cambiar(estrella4)
+                        });
+                        estrella5.addEventListener("mouseover", function() {
+                            cambiar(estrella5)
+                        });
+                        // onmouseout
+                        estrella1.addEventListener("mouseout", function() {
+                            restaurar(estrella1);
+                        });
+                        estrella2.addEventListener("mouseout", function() {
+                            restaurar(estrella2);
+                        });
+                        estrella3.addEventListener("mouseout", function() {
+                            restaurar(estrella3);
+                        });
+                        estrella4.addEventListener("mouseout", function() {
+                            restaurar(estrella4);
+                        });
+                        estrella5.addEventListener("mouseout", function() {
+                            restaurar(estrella5);
+                        });
+
+                        div.appendChild(flecha);
+                        div.appendChild(h5_nombre_servicio);
+                        div.appendChild(div_stars);
+                        div_stars.appendChild(estrella1);
+                        div_stars.appendChild(estrella2);
+                        div_stars.appendChild(estrella3);
+                        div_stars.appendChild(estrella4);
+                        div_stars.appendChild(estrella5);
+                        resumen.appendChild(div);
+
+                        count++;
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                        console.log("ocurrio un error")
+                    });
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+            console.log("ocurrio un error");
+        });
+
+    async function getData(url) {
+        const response = await fetch(url, {
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Credentials': 'true'
+            }
+        });
+        return response.json();
+    }
+</script>
+
+</html>
+
+</html>
+
+</html>

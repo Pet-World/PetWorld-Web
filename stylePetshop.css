@@ -9,7 +9,7 @@
         box-sizing: border-box;
     }
     
-    :root {
+     :root {
         --bg-color: rgba(255, 122, 0);
         --marron: #62412F;
         --verde: #40b840;
@@ -133,6 +133,7 @@
     }
     
     #cuadro_resumen {
+        overflow: scroll;
         float: right;
         width: 95%;
         height: 64%;

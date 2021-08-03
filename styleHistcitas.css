@@ -215,7 +215,7 @@ opt4 {
     box-sizing: border-box;
 }
 
-img.trv {
+#trv {
     position: absolute;
     width: 15.35px;
     height: 18px;
@@ -223,7 +223,7 @@ img.trv {
     top: 30%;
 }
 
-lm {
+#lm {
     position: absolute;
     width: 281px;
     height: 16px;
@@ -246,7 +246,7 @@ hr.lis {
     border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.stars {
+#stars {
     position: relative;
     left: 600px;
     top: 25%;

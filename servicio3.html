@@ -28,7 +28,7 @@
                     <li><a href="index.html#contact">CONTÁCTANOS</a></li>
                 </ul>
             </div>
-            <button id="btn_inisesion" onclick="window.location.href='/PetWorld-Web/inicioSesion.html'">INICIAR SESION</button>
+            <button id="btn_inisesion" onclick="changeState()">INICIAR SESION</button>
         </nav>
 
     </header>
@@ -54,13 +54,10 @@
             <br><br> En caso de no poder asistir a la consulta, lo recomendable es comunicarse a nuestra Central de Citas, llamando al 01 223-2180 y reprogramar la fecha y hora de su consulta.
         </p>
         <r2></r2>
-        <bt data-toggle="modal" data-target="#myModal">SOLICITAR</bt>
+        <bt data-toggle="modal" data-target="#myModal" onclick="solicitar()">SOLICITAR</bt>
 
         <!-- <button id="solicitar" data-toggle="modal" data-target="#myModal">SOLICITAR</button> -->
 
-        <cir>
-            <img class="cart" src="img/cart.png"></img>
-        </cir>
         <g22>
             <hr class="lis" style="top: 49px;">
             <hr class="lis" style="top: 98px;">
@@ -105,10 +102,6 @@
                             <input readonly onmousedown="return false;" type="text" name="dni" id="dni">
                         </fieldset>
                         <fieldset>
-                            <legend>Telefono Fijo</legend>
-                            <input readonly onmousedown="return false;" type="text" name="fijo" id="fijo">
-                        </fieldset>
-                        <fieldset>
                             <legend>Telefono Movil</legend>
                             <input readonly onmousedown="return false;" type="text" name="movil" id="movil">
                         </fieldset>
@@ -123,7 +116,8 @@
 
                         <fieldset id="cuadro_mascota">
                             <legend>Mascota</legend>
-                            <input readonly onmousedown="return false;" type="text" name="mascota" id="mascota">
+                            <select id="sel_mascota_nombre" multiple class="form-control">
+                            </select>
                         </fieldset>
 
                     </div>
@@ -133,29 +127,204 @@
                     </fieldset>
                     <fieldset class="cuadro-inline">
                         <legend>Sugerencia de fecha para la cita</legend>
-                        <input type="text" name="sugerencia" id="sugerencia">
+                        <input type="date" name="trip-start" value="2002-03-30" min="2018-01-01" max="2018-12-31" id="sugerencia">
                     </fieldset>
                 </div>
                 <div class="columna2">
                     <fieldset id="cuadro_resumen">
                         <legend>Resumen de solicitud de compra</legend>
-                        <input type="text" name="resumen" id="resumen">
+                        <div id="resumen">
+
+                        </div>
                     </fieldset>
                     <div class="text-input">
-                        <input readonly onmousedown="return false;" type="number" name="total" id="total">
-                        <h3>Total:</h3>
-                    </div>
-                    <div class="text-input">
-                        <input type="number" name="efectivo" id="efectivo">
-                        <h3>Efectivo para pago:</h3>
+                        <input readonly onmousedown="return false;" type="text" name="total" id="total">
+                        <h3>Total (S/.)</h3>
                     </div>
                 </div>
                 <p id="importante"><span>IMPORTANTE : </span>Tomar en cuenta las condiciones y pasos para la solicitud, movilidad y pago de un servicio</p>
-                <button id="enviar" data-dismiss="modal">ENVIAR</button>
+                <button id="enviar" data-dismiss="modal" onclick="enviar()">ENVIAR</button>
             </div>
         </div>
 
     </section>
+    <script>
+        var UrlBackendJS = "http://localhost:5000";
+        let mascotas = [];
+        let id_servicios_seleccionados = [];
+
+        var btnSession = document.getElementById("btn_inisesion");
+        var btnSolicitar = document.getElementById("btnSolicitar");
+        var sel_mascota_nombre = document.getElementById("sel_mascota_nombre");
+        var resumen = document.getElementById("resumen");
+
+        var nombre = document.getElementById("nombre");
+        var apellidos = document.getElementById("apellidos");
+        var movil = document.getElementById("movil");
+        var dni = document.getElementById("dni");
+        var email = document.getElementById("email");
+        var total = document.getElementById("total");
+        var sugerencia = document.getElementById("sugerencia");
+
+        var userCurrent = localStorage.getItem("user") == "" ? "" : JSON.parse(localStorage.getItem("user"));
+        if (userCurrent) {
+            btnSession.innerHTML = "CERRAR SESIÓN";
+        } else {
+            btnSession.innerHTML = "INICIAR SESIÓN";
+        }
+
+        function changeState() {
+            if (btnSession.innerHTML == 'CERRAR SESIÓN') {
+                localStorage.setItem("user", "");
+                btnSession.innerHTML = "INICIAR SESIÓN";
+                window.location.href = '/PetWorld-Web/servicio3.html';
+            } else {
+                window.location.href = '/PetWorld-Web/inicioSesion.html';
+            }
+        }
+
+        function solicitar() {
+            if (userCurrent == "") {
+                alert("Inicie sesión!");
+                window.location.href = '/PetWorld-Web/inicioSesion.html';
+                nombre.value = "";
+                apellidos.value = "";
+                email.value = "";
+                dni.value = "";
+                movil.value = "";
+            } else {
+                nombre.value = userCurrent.nombres;
+                apellidos.value = userCurrent.apellidos;
+                email.value = userCurrent.email;
+                dni.value = userCurrent.dni;
+                movil.value = userCurrent.celular;
+
+                for (let index = 0; index < 7; index++) {
+                    let cbx = document.getElementById(`cbox${index + 1}`);
+                    // el 100 varia de acuerdo al tipo de servicio
+                    let id_service_current = 300 + index;
+                    if (cbx.checked) {
+                        id_servicios_seleccionados.push(id_service_current);
+                    }
+                }
+
+                // obtenemos las mascotas de acuerdo al dni del usuario
+                getData(UrlBackendJS + `/pet/getPetsByDni?dni=${dni.value}`).then(response => {
+                        let data = response.data;
+                        for (let index = 0; index < data.length; index++) {
+                            const element = data[index];
+                            mascotas.push([element.nombre, element.id_mascota]);
+                        }
+                        for (let i = 0; i < mascotas.length; i++) {
+                            let option = document.createElement("option");
+                            option.text = mascotas[i][0];
+                            sel_mascota_nombre.appendChild(option);
+                        }
+                        sel_mascota_nombre.selectedIndex = 0;
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                        console.log("ocurrio un error");
+                    });
+
+                // eliminamos los hijos antes existentes de div 'resumen'
+                let len = resumen.childElementCount;
+                let child = resumen.lastElementChild;
+                while (child && len >= 1) {
+                    resumen.removeChild(child);
+                    len -= 1;
+                    child = resumen.lastElementChild;
+                }
+
+                // obtenemos informacion acerca de los servicios seleccionados
+                var precioTotal = 0;
+                id_servicios_seleccionados.forEach(id_service => {
+                    getData(UrlBackendJS + `/service/getService?id_servicio=${id_service}`).then(response => {
+                            let data = response.data[0];
+                            let div = document.createElement("div");
+                            let h5_nombre_servicio = document.createElement("h5");
+                            let h6_precio_servicio = document.createElement("h6");
+
+                            div.style = "display:flex; text-align: right; align-items:center;";
+                            h5_nombre_servicio.style = "width: 400px";
+                            h6_precio_servicio.style = "width: 100px";
+                            h5_nombre_servicio.innerHTML = data.especificacion;
+                            h6_precio_servicio.innerHTML = data.precio;
+
+                            div.appendChild(h5_nombre_servicio);
+                            div.appendChild(h6_precio_servicio);
+                            resumen.appendChild(div);
+
+                            precioTotal += data.precio;
+                            total.value = String(parseFloat(precioTotal));
+                        })
+                        .catch((error) => {
+                            console.log(error)
+                            console.log("ocurrio un error")
+                        });
+                });
+            }
+
+        }
+
+        function enviar() {
+            let index_mascota_seleccionada = sel_mascota_nombre.selectedIndex;
+            for (let index = 0; index < id_servicios_seleccionados.length; index++) {
+                const id_mascota = mascotas[index_mascota_seleccionada][1];
+                const id_servicio = id_servicios_seleccionados[index];
+
+                let id_historial = parseInt(String(id_mascota) + String(id_servicio) + String(sugerencia.value.replace(/-/g, '')));
+
+                let payload_historial_cita = {
+                    id_historial,
+                    dni: dni.value,
+                    fecha: sugerencia.value,
+                    id_servicio,
+                    id_mascota,
+                    valoracion: 0
+                }
+                postData(UrlBackendJS + '/historycite/createHistorycite', payload_historial_cita)
+                    .then(data => {
+                        if (data.status == 'SUCCESS') {
+                            console.log(`Servicio con ID ${id_servicio} almacenado en el historial de citas`);
+                        } else {
+                            alert(data.message);
+                        }
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    });
+            }
+        }
+
+
+        async function postData(url = '', data) {
+            const response = await fetch(url, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Credentials': 'true'
+                },
+                body: JSON.stringify(data)
+            });
+            return response.json();
+        }
+
+        async function getData(url) {
+            const response = await fetch(url, {
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Credentials': 'true'
+                }
+            });
+            return response.json();
+        }
+    </script>
 </body>
 
 </html>
