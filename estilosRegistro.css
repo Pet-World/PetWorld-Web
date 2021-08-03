@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+.nav-menu li {
+    font-weight: 600 !important;
+}
+
 #main {
     position: relative;
     margin-top: 14vh;

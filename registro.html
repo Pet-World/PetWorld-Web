@@ -235,6 +235,9 @@
                 document.getElementById("divMascota").style.display = "block";
                 n_mascotas.disabled = true;
                 nombre_mascota.focus();
+                if (n_mascotas.value == 1) {
+                    btnRegistro.style.display = "block";
+                }
             } else {
                 alert("Debe ingresar la cantidad de mascotas");
             }
