@@ -1,0 +1,10 @@
+opbx2 {
+    position: absolute;
+    width: 368px;
+    height: 86px;
+    left: 38px;
+    top: calc(339px - 14vh);
+    background: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+}
