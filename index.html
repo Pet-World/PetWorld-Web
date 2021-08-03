@@ -11,8 +11,10 @@
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Indie+Flower&family=Nunito&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Indie+Flower&family=Nunito&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
@@ -31,7 +33,7 @@
                     <li><a href="#contact">CONTÁCTANOS</a></li>
                 </ul>
             </div>
-            <button id="btn_inisesion">INICIAR SESION</button>
+            <button id="btn_inisesion" onclick="changeState()">INICIAR SESION</button>
         </nav>
 
     </header>
@@ -53,8 +55,12 @@
                     <img id="img_conocenos" class="titulos" src="img/conocenos.png" alt="conocenos">
                     <div class="subrayado"></div>
                     <div id="descripcion">
-                        Si ellos dedican su vida entera a querernos y a convertirnos en mejores personas, ¿no les parece justo darles lo mejor? Darles amor, salud y bienestar debe ser para todos los que tenemos mascotas, nuestra principal preocupación.
-                        <br><br>Es por eso que nace Pet World, para brindar atención médica especializada, baño, peluquería y asesoría en la elección del mejor alimento, juguetes y accesorios.<br>Para ayudarte a que hagas más feliz a tu mascota en retribución
+                        Si ellos dedican su vida entera a querernos y a convertirnos en mejores personas, ¿no les parece
+                        justo darles lo mejor? Darles amor, salud y bienestar debe ser para todos los que tenemos
+                        mascotas, nuestra principal preocupación.
+                        <br><br>Es por eso que nace Pet World, para brindar atención médica especializada, baño,
+                        peluquería y asesoría en la elección del mejor alimento, juguetes y accesorios.<br>Para ayudarte
+                        a que hagas más feliz a tu mascota en retribución
                         de todo lo que ellos hacen por ti.
                     </div>
                     <div id="img_about_conocenos">
@@ -142,9 +148,9 @@
             <div class="servicios-contenedor">
                 <img id="img_servicios" class="titulos" src="img/servicios.png" alt="servicios">
                 <div class="subrayado"></div>
-                
+
                 <div id="lista_servicios">
-                    
+
                     <div class="servicios_img">
                         <img src="img/servicios_img1.png" alt="servicios_img1">
 
@@ -184,8 +190,25 @@
                     <img id="localizacion" src="img/localizacion.png" alt="">
                 </div>
         </section>
-
     </main>
+    <script>
+        var btnSession = document.getElementById("btn_inisesion");
+        var userCurrent = localStorage.getItem("user") == "" ? "" : JSON.parse(localStorage.getItem("user"));
+        if (userCurrent) {
+            btnSession.innerHTML = "CERRAR SESIÓN";
+        } else {
+            btnSession.innerHTML = "INICIAR SESIÓN";
+        }
+
+        function changeState() {
+            if (btnSession.innerHTML == 'CERRAR SESIÓN') {
+                localStorage.setItem("user", "");
+                btnSession.innerHTML = "INICIAR SESIÓN";
+            } else {
+                window.location.href = '/PetWorld-Web/inicioSesion.html';
+            }
+        }
+    </script>
 </body>
 
 </html>

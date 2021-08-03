@@ -24,10 +24,13 @@
                 <img id="logo_img" src="img/logo.png" alt="logo" />
 
                 <ul class="nav-menu">
-                    <li><a href="#hero">INICIO</a></li>
-                    <li><a href="#about">CONÓCENOS</a></li>
-                    <li><a href="#servicios">SERVICIOS</a></li>
-                    <li><a href="#contact">CONTÁCTANOS</a></li>
+                    <li><a onclick="window.location.href='/PetWorld-Web/#hero'" style="cursor:pointer;">INICIO</a></li>
+                    <li><a onclick="window.location.href='/PetWorld-Web/#conocenos'"
+                            style="cursor:pointer;">CONÓCENOS</a></li>
+                    <li><a onclick="window.location.href='/PetWorld-Web/#servicios'"
+                            style="cursor:pointer;">SERVICIOS</a></li>
+                    <li><a onclick="window.location.href='/PetWorld-Web/#contact'"
+                            style="cursor:pointer;">CONTÁCTANOS</a></li>
                 </ul>
             </div>
         </nav>
@@ -43,7 +46,7 @@
 
                 <div class="fila">
                     <form class="campo" style="width: 90%">
-                        <input type="text" required id="email"/>
+                        <input type="text" required id="email" />
                         <label class="datos">
                             <span class="nombre_campo">Email</span>
                         </label>
@@ -52,7 +55,7 @@
 
                 <div class="fila">
                     <form class="campo" style="width: 90%">
-                        <input type="password" required id="contrasena"/>
+                        <input type="password" required id="contrasena" />
                         <label class="datos">
                             <span class="nombre_campo">Contraseña</span>
                         </label>
@@ -63,10 +66,11 @@
 
                 <div class="fila" style="margin-left: 20%">
                     <h4 id="lblNoCuenta">Aún no tienes una cuenta? </h4>
-                    <button id="lblCreaCuenta" onclick="window.location.href='/PetWorld-Web/registro.html'"> Crea una ahora
+                    <button id="lblCreaCuenta" onclick="window.location.href='/PetWorld-Web/registro.html'"> Crea una
+                        ahora
                     </button>
                 </div>
-                
+
             </div>
         </section>
     </main>
@@ -87,12 +91,10 @@
             }
             postData(UrlBackendJS + '/user/signin', datosUsuario)
                 .then(data => {
-                    if(data.status == 'SUCCESS'){
-                        window.location.href='/PetWorld-Web/#servicios';
-                        //localStorage.setItem({datauser: data.data});
-                        localStorage.setItem('miGato', 'Juan');
-
-                    }else{
+                    if (data.status == 'SUCCESS') {
+                        window.location.href = '/PetWorld-Web/#servicios';
+                        localStorage.setItem("user", JSON.stringify(data.data[0]));
+                    } else {
                         alert(data.message);
                     }
                 })
@@ -115,6 +117,7 @@
             });
             return response.json();
         }
+
     </script>
 </body>
 
