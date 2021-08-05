@@ -1,4 +1,7 @@
 # PetWorld 🐶🐾
 
 
-Made by Julissa
+Made by:
+ - Julissa Garcia
+ - Piero Estrada
+ - Carlos Rojas
