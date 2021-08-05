@@ -175,16 +175,14 @@
 
         var userCurrent = localStorage.getItem("user") == "" ? "" : JSON.parse(localStorage.getItem("user"));
         if (userCurrent) {
-            btnSession.innerHTML = "CERRAR SESIÓN";
+            btnSession.innerHTML = "IR A PERFIL";
         } else {
             btnSession.innerHTML = "INICIAR SESIÓN";
         }
 
         function changeState() {
-            if (btnSession.innerHTML == 'CERRAR SESIÓN') {
-                localStorage.setItem("user", "");
-                btnSession.innerHTML = "INICIAR SESIÓN";
-                window.location.href = '/PetWorld-Web/servicio1.html';
+            if (btnSession.innerHTML == 'IR A PERFIL') {
+                window.location.href = '/PetWorld-Web/perfil.html';
             } else {
                 window.location.href = '/PetWorld-Web/inicioSesion.html';
             }
@@ -253,7 +251,7 @@
                             let h6_precio_servicio = document.createElement("h6");
 
                             div.style = "display:flex; text-align: right; align-items:center;";
-                            h5_nombre_servicio.style = "width: 400px";
+                            h5_nombre_servicio.style = "width: 450px";
                             h6_precio_servicio.style = "width: 100px";
                             h5_nombre_servicio.innerHTML = data.especificacion;
                             h6_precio_servicio.innerHTML = data.precio;

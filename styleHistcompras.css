@@ -94,7 +94,7 @@ opbx1 {
     height: 86px;
     left: 38px;
     top: calc(235px - 14vh);
-    background: #ffffff;
+    background: rgba(255, 239, 153, 0.9);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
 }
@@ -105,7 +105,7 @@ opbx2 {
     height: 86px;
     left: 38px;
     top: calc(339px - 14vh);
-    background: rgba(255, 239, 153, 0.9);
+    background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
 }
@@ -119,6 +119,7 @@ opbx3 {
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
+    display: none;
 }
 
 opbx4 {
@@ -136,7 +137,7 @@ opt1 {
     position: absolute;
     width: 342px;
     height: 52px;
-    left: 135px;
+    left: 55px;
     top: calc(252px - 14vh);
     font-family: Germania One;
     font-style: normal;
@@ -154,7 +155,7 @@ opt2 {
     position: absolute;
     width: 342px;
     height: 52px;
-    left: 57px;
+    left: 87px;
     top: calc(355px - 14vh);
     font-family: Germania One;
     font-style: normal;
@@ -172,7 +173,7 @@ opt3 {
     position: absolute;
     width: 281px;
     height: 40px;
-    left: 82px;
+    left: 99px;
     top: calc(466px - 14vh);
     font-family: Germania One;
     font-style: normal;
@@ -204,7 +205,7 @@ opt4 {
     color: #680101;
 }
 
-#lcitas {
+#lcompras {
     position: relative;
     width: 783px;
     height: 50px;
@@ -215,7 +216,7 @@ opt4 {
     box-sizing: border-box;
 }
 
-img.trv {
+#trv {
     position: absolute;
     width: 15.35px;
     height: 18px;
@@ -223,9 +224,9 @@ img.trv {
     top: 30%;
 }
 
-lm {
+#lm {
     position: absolute;
-    width: 281px;
+    width: 500px;
     height: 16px;
     left: 53px;
     top: 30%;
@@ -246,8 +247,9 @@ hr.lis {
     border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.stars {
+#stars {
     position: relative;
+    width: 150px;
     left: 600px;
     top: 25%;
     cursor: pointer;

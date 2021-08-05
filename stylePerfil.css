@@ -1,10 +1,176 @@
+@import url("https://fonts.googleapis.com/css?family=Germania+One");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+* {
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: rgba(255, 122, 0);
+    --marron: #62412F;
+    --verde: #40b840;
+}
+
+#noh {
+    position: relative;
+    margin-top: 14vh;
+    height: 86vh;
+}
+
+h1 {
+    position: absolute;
+    width: 459px;
+    height: 36px;
+    left: 131px;
+    top: 53px;
+    font-family: Germania One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin: 0px;
+    color: #402f20;
+}
+
+rect {
+    position: absolute;
+    width: 429px;
+    height: 68px;
+    left: 0px;
+    top: 34px;
+    background: rgba(255, 168, 38, 0.9);
+    border-radius: 0px 15px 0px 0px;
+    filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+img.bone {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 36px;
+    top: 56px;
+}
+
+rect2 {
+    position: absolute;
+    width: 410px;
+    height: 460px;
+    left: calc(50% - 410px/2);
+    top: calc(205px - 14vh);
+    background: rgba(255, 122, 0, 0.75);
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+}
+
+
 opbx2 {
     position: absolute;
     width: 368px;
     height: 86px;
-    left: 38px;
+    left: calc(50% - 368px/2);
     top: calc(339px - 14vh);
-    background: #fff;
+    background: #ffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
+}
+opbx1 {
+    position: absolute;
+    width: 368px;
+    height: 86px;
+    left: calc(50% - 368px/2);
+    top: calc(235px - 14vh);
+    background: #ffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+}
+
+
+opbx4 {
+    position: absolute;
+    width: 368px;
+    height: 86px;
+    left: calc(50% - 368px/2);
+    top: calc(547px - 14vh);
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+}
+
+opt1 {
+    position: absolute;
+    width: 342px;
+    height: 52px;
+    left: calc(50% - 332px/2);
+    top: calc(252px - 14vh);
+    font-family: Germania One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #000000;
+}
+
+opt2 {
+    position: absolute;
+    width: 342px;
+    height: 52px;
+    left: calc(50% - 292px/2);
+    top: calc(355px - 14vh);
+    font-family: Germania One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #000000;
+}
+
+opt3 {
+    position: absolute;
+    width: 281px;
+    height: 40px;
+    left: calc(50% - 281px/2);
+    top: calc(466px - 14vh);
+    font-family: Germania One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #000000;
+}
+
+opt4 {
+    position: absolute;
+    width: 223px;
+    height: 33px;
+    left: calc(50% - 223px/2);
+    top: calc(573px - 14vh);
+    font-family: Germania One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #680101;
 }

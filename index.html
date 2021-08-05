@@ -193,15 +193,14 @@
         var btnSession = document.getElementById("btn_inisesion");
         var userCurrent = localStorage.getItem("user") == "" ? "" : JSON.parse(localStorage.getItem("user"));
         if (userCurrent) {
-            btnSession.innerHTML = "CERRAR SESIÓN";
+            btnSession.innerHTML = "IR A PERFIL";
         } else {
             btnSession.innerHTML = "INICIAR SESIÓN";
         }
 
         function changeState() {
-            if (btnSession.innerHTML == 'CERRAR SESIÓN') {
-                localStorage.setItem("user", "");
-                btnSession.innerHTML = "INICIAR SESIÓN";
+            if (btnSession.innerHTML == 'IR A PERFIL') {
+                window.location.href = '/PetWorld-Web/perfil.html';
             } else {
                 window.location.href = '/PetWorld-Web/inicioSesion.html';
             }

@@ -105,7 +105,7 @@ opbx2 {
     height: 86px;
     left: 38px;
     top: calc(339px - 14vh);
-    background: #FFFFFF;
+    background: rgba(255, 239, 153, 0.9);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
 }
@@ -119,6 +119,7 @@ opbx3 {
     background: rgba(255, 239, 153, 0.9);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
+    display: none;
 }
 
 opbx4 {
@@ -136,7 +137,7 @@ opt1 {
     position: absolute;
     width: 342px;
     height: 52px;
-    left: 135px;
+    left: 57px;
     top: calc(252px - 14vh);
     font-family: Germania One;
     font-style: normal;
@@ -154,7 +155,7 @@ opt2 {
     position: absolute;
     width: 342px;
     height: 52px;
-    left: 57px;
+    left: 82px;
     top: calc(355px - 14vh);
     font-family: Germania One;
     font-style: normal;
@@ -225,7 +226,7 @@ opt4 {
 
 #lm {
     position: absolute;
-    width: 281px;
+    width: 500px;
     height: 16px;
     left: 53px;
     top: 30%;
@@ -248,6 +249,7 @@ hr.lis {
 
 #stars {
     position: relative;
+    width: 150px;
     left: 600px;
     top: 25%;
     cursor: pointer;

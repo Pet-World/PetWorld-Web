@@ -500,6 +500,7 @@
         height: 22.16px;
         bottom: 4px;
         right: 9px;
+        cursor: pointer;
         background: url(img/menos.png);
     }
     
@@ -509,6 +510,7 @@
         height: 22.16px;
         bottom: 4px;
         right: 86px;
+        cursor: pointer;
         background: url(img/mas.png);
     }
     

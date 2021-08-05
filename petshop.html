@@ -125,11 +125,11 @@
                 </fieldset>
                 <div class="text-input">
                     <input readonly onmousedown="return false;" type="text" name="total" id="total">
-                    <h3>Total:</h3>
+                    <h3>Total (S/.):</h3>
                 </div>
             </div>
             <p id="importante"><span>IMPORTANTE : </span>Tomar en cuenta las condiciones y pasos para la solicitud, entrega y pago de un servicio</p>
-            <button id="enviar" onclick="enviar()">ENVIAR</button>
+            <button  data-dismiss="modal" id="enviar" onclick="enviar()">ENVIAR</button>
         </div>
     </div>
     <script>
@@ -252,7 +252,7 @@
                     nombre.className = "prName";
                     marca.innerHTML = element.marca;
                     marca.className = "prBrand";
-                    img.src = "img/pets1.png";
+                    img.src = element.imagen;
                     img.alt = "";
                     img.className = "productImg";
 
@@ -330,16 +330,14 @@
 
         var userCurrent = localStorage.getItem("user") == "" ? "" : JSON.parse(localStorage.getItem("user"));
         if (userCurrent) {
-            btnSession.innerHTML = "CERRAR SESIÓN";
+            btnSession.innerHTML = "IR A PERFIL";
         } else {
             btnSession.innerHTML = "INICIAR SESIÓN";
         }
 
         function changeState() {
-            if (btnSession.innerHTML == 'CERRAR SESIÓN') {
-                localStorage.setItem("user", "");
-                btnSession.innerHTML = "INICIAR SESIÓN";
-                window.location.href = '/PetWorld-Web/petshop.html';
+            if (btnSession.innerHTML == 'IR A PERFIL') {
+                window.location.href = '/PetWorld-Web/perfil.html';
             } else {
                 window.location.href = '/PetWorld-Web/inicioSesion.html';
             }
@@ -384,7 +382,9 @@
                         let h5_nombre_producto = document.createElement("h5");
                         let h6_precio_producto = document.createElement("h6");
 
-                        div.style = "flex-direction:row;align-items:center;";
+                        div.style = "display:flex; text-align: right; align-items:center;";
+                        h5_nombre_producto.style = "width: 450px";
+                        h6_precio_producto.style = "width: 50px";
                         h5_nombre_producto.innerHTML = descripcion_producto + ` x ${cantidad} `;
                         h6_precio_producto.innerHTML = precio * cantidad;
 
@@ -395,7 +395,7 @@
                         precioTotal += precio;
                     }
                 }
-                total.value = String(parseFloat(precioTotal)) + '  soles';
+                total.value = String(parseFloat(precioTotal));
             }
         }
 
@@ -429,9 +429,9 @@
                         .catch((error) => {
                             console.log(error)
                         });
-                    alert("Se guardaron todos los productos!");
                 }
             }
+            alert("Se guardaron todos los productos!");
         }
 
         async function postData(url = '', data) {

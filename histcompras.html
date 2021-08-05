@@ -23,7 +23,6 @@
                     <li><a href="index.html#contact">CONTÁCTANOS</a></li>
                 </ul>
             </div>
-            <button id="btn_inisesion">INICIAR SESION</button>
         </nav>
 
     </header>
@@ -33,76 +32,263 @@
         <img class="bone" src="img/bone.png"></img>
         <rect2></rect2>
         <tit> Historial de Compras</tit>
-        <opbx1></opbx1>
+        <!-- <opbx1></opbx1> -->
         <a href="histcompras.html#noh">
+            <opbx1 style="cursor: pointer;"></opbx1>
+        </a>
+        <a href="histcitas.html#noh">
             <opbx2 style="cursor: pointer;"></opbx2>
         </a>
-        <a href="histcitas.html#noh">
-            <opbx3 style="cursor: pointer;"></opbx3>
-        </a>
         <opbx4></opbx4>
-        <a href="#misdatos">
+        <!-- <a style="cursor: pointer;" href="#misdatos">
             <opt1>Mis datos</opt1>
+        </a> -->
+        <a style="cursor: pointer;" href="histcompras.html#noh">
+            <opt1>Historial de Compras</opt1>
         </a>
-        <a href="histcompras.html#noh">
-            <opt2>Historial de Compras</opt2>
+        <a style="cursor: pointer;" href="histcitas.html#noh">
+            <opt2>Historial de Citas</opt2>
         </a>
-        <a href="histcitas.html#noh">
-            <opt3>Historial de citas</opt3>
-        </a>
-        <a href="#cerrars">
+        <a style="cursor: pointer;" onclick="cerrarSesion()">
             <opt4>Cerrar Sesión</opt4>
         </a>
+        <div id="resumen">
+        </div>
 
-        <section id="lcitas">
-            <img class="trv" src="img/triv.png"></img>
-            <lm>Chequeos médicos preventivos </lm>
-            <div class="stars">
-                <img id="1estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
-                <img id="2estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
-                <img id="3estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
-                <img id="4estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
-                <img id="5estrella " class="star " onmouseover="cambiar(this) " onmouseout="restaurar(this) " onclick="valorar(this) " src="img/star.png " alt="star ">
-            </div>
-
-        </section>
     </section>
 
     <script>
-        var contador;
-        var click = false;
-        var valorado = false;
+        var UrlBackendJS = "http://localhost:5000";
+    let compras = [];
+    let id_producto = [];
+    let valoraciones = [];
+    let id_historiales = [];
+    let count = 0;
+    var ultimo;
+    var contador;
+    var click = false;
+    var valorado = false;
+    var resumen = document.getElementById("resumen");
+    var btnSession = document.getElementById("btn_inisesion");
 
-        function valorar(item) {
-            if (!valorado) {
-                cambio(item, "img/colorStar.png");
-            }
-            click = true;
-            valorado = true;
+    var userCurrent = localStorage.getItem("user") == "" ? "" : JSON.parse(localStorage.getItem("user"));
+
+    var dni = userCurrent.dni;
+
+
+    function valorar(item) {
+        ultimo = item.id[item.id.length - 1];
+        if (valoraciones[ultimo] == 0) {
+            cambio(item, "img/colorStar.png");
+            valoraciones[ultimo] = parseInt(item.id[0]);
+            //console.log(valoraciones);
+
+            var payload_add_valoration = { 
+                id_historial: id_historiales[ultimo], 
+                valoracion: valoraciones[ultimo]
+            };
+
+            postData(UrlBackendJS + '/historyshop/addValoration', payload_add_valoration)
+                        .then(data => {
+                            if (data.status == 'SUCCESS') {
+                                console.log(`Se actualizó la valoración de la compra con ID historial ${id_historiales[ultimo]}`);
+                            } else {
+                                alert(data.message);
+                            }
+                        })
+                        .catch((error) => {
+                            console.log(error)
+                        });
         }
+    }
 
-        function restaurar(item) {
-            if (!click) {
-                cambio(item, "img/star.png");
+    function restaurar(item) {
+        ultimo = item.id[item.id.length - 1];
+        if (valoraciones[ultimo] == 0) {
+            cambio(item, "img/star.png");
+        }
+    }
+
+    function cambiar(item) {
+        ultimo = item.id[item.id.length - 1];
+        if (valoraciones[ultimo] == 0) {
+            cambio(item, "img/colorStar.png");
+        }
+    }
+
+    function cambio(item, imagen) {
+        contador = item.id[0];
+        let nombre = item.id.substring(1);
+        for (let i = 0; i < 5; i++) {
+            if (i < contador) {
+                document.getElementById((i + 1) + nombre).src = imagen;
             }
         }
+    }
 
-        function cambiar(item) {
-            if (!click) {
-                cambio(item, "img/colorStar.png");
-            }
+    function pintar(item) {
+        ultimo = item.id[item.id.length - 1];
+        if (valoraciones[ultimo] != 0) {
+            cambio(item, "img/colorStar.png");
         }
+    }
 
-        function cambio(item, imagen) {
-            contador = item.id[0];
-            let nombre = item.id.substring(1);
-            console.log(contador);
-            console.log(nombre);
-            for (let i = 0; i < 5; i++) {
-                if (i < contador) {
-                    document.getElementById((i + 1) + nombre).src = imagen;
-                }
+    // obtenemos las compras de acuerdo al dni del usuario
+    getData(UrlBackendJS + `/historyshop/getHistoryByDni?dni=${dni}`).then(response => {
+
+            let data = response.data;
+            for (let index = 0; index < data.length; index++) {
+                const element = data[index];
+
+                compras.push([element.id_producto, element.valoracion, element.id_historial]);
             }
+            for (let i = 0; i < compras.length; i++) {
+                id_producto.push(compras[i][0]);
+                valoraciones.push(compras[i][1]);
+                id_historiales.push(compras[i][2]);
+            }
+
+            id_producto.forEach(id_product => {
+                getData(UrlBackendJS + `/product/getProduct?id_producto=${id_product}`).then(response => {
+                        let data = response.data[0];
+                        let div = document.createElement("div");
+                        let h5_nombre_producto = document.createElement("h5");
+                        h5_nombre_producto.innerHTML = data.nombre;
+                        console.log(data.nombre)
+                        let div_stars = document.createElement("div");
+                        let flecha = document.createElement("img");
+                        flecha.src = "img/triv.png";
+                        let estrella1 = document.createElement("img");
+                        estrella1.src = "img/star.png";
+                        estrella1.id = "1estrella" + String(count);
+                        let estrella2 = document.createElement("img");
+                        estrella2.src = "img/star.png";
+                        estrella2.id = "2estrella" + String(count);
+                        let estrella3 = document.createElement("img");
+                        estrella3.src = "img/star.png";
+                        estrella3.id = "3estrella" + String(count);
+                        let estrella4 = document.createElement("img");
+                        estrella4.src = "img/star.png";
+                        estrella4.id = "4estrella" + String(count);
+                        let estrella5 = document.createElement("img");
+                        estrella5.src = "img/star.png";
+                        estrella5.id = "5estrella" + String(count);
+
+                        
+                        // let h6_precio_producto = document.createElement("h6");
+
+                        div.id = "lcompras";
+                        flecha.id = "trv";
+                        h5_nombre_producto.id = "lm";
+                        div_stars.id = "stars";
+
+                        // click
+                        estrella1.addEventListener("click", function() {
+                            valorar(estrella1)
+                        });
+                        estrella2.addEventListener("click", function() {
+                            valorar(estrella2)
+                        });
+                        estrella3.addEventListener("click", function() {
+                            valorar(estrella3)
+                        });
+                        estrella4.addEventListener("click", function() {
+                            valorar(estrella4)
+                        });
+                        estrella5.addEventListener("click", function() {
+                            valorar(estrella5)
+                        });
+                        // onmouseover
+                        estrella1.addEventListener("mouseover", function() {
+                            cambiar(estrella1);
+                        });
+                        estrella2.addEventListener("mouseover", function() {
+                            cambiar(estrella2);
+                        });
+                        estrella3.addEventListener("mouseover", function() {
+                            cambiar(estrella3)
+                        });
+                        estrella4.addEventListener("mouseover", function() {
+                            cambiar(estrella4)
+                        });
+                        estrella5.addEventListener("mouseover", function() {
+                            cambiar(estrella5)
+                        });
+                        // onmouseout
+                        estrella1.addEventListener("mouseout", function() {
+                            restaurar(estrella1);
+                        });
+                        estrella2.addEventListener("mouseout", function() {
+                            restaurar(estrella2);
+                        });
+                        estrella3.addEventListener("mouseout", function() {
+                            restaurar(estrella3);
+                        });
+                        estrella4.addEventListener("mouseout", function() {
+                            restaurar(estrella4);
+                        });
+                        estrella5.addEventListener("mouseout", function() {
+                            restaurar(estrella5);
+                        });
+
+                        div.appendChild(flecha);
+                        div.appendChild(h5_nombre_producto);
+                        div.appendChild(div_stars);
+                        div_stars.appendChild(estrella1);
+                        div_stars.appendChild(estrella2);
+                        div_stars.appendChild(estrella3);
+                        div_stars.appendChild(estrella4);
+                        div_stars.appendChild(estrella5);
+                        resumen.appendChild(div);
+
+                        if(valoraciones[count]==1) {pintar(estrella1);}
+                        else if(valoraciones[count]==2) {pintar(estrella2);}
+                        else if(valoraciones[count]==3) {pintar(estrella3);}
+                        else if(valoraciones[count]==4) {pintar(estrella4);}
+                        else if(valoraciones[count]==5) {pintar(estrella5);}
+                        
+                        count++;
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                        console.log("ocurrio un error")
+                    });
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+            console.log("ocurrio un error");
+        });
+
+    function cerrarSesion(){
+        localStorage.setItem("user", "");
+        window.location.href='/PetWorld-Web/inicioSesion.html';
+    }
+    async function getData(url) {
+        const response = await fetch(url, {
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Credentials': 'true'
+            }
+        });
+        return response.json();
+    }
+
+    async function postData(url = '', data) {
+            const response = await fetch(url, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Credentials': 'true'
+                },
+                body: JSON.stringify(data)
+            });
+            return response.json();
         }
     </script>
 </body>

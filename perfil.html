@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleHistcompras.css">
     <link rel="stylesheet" href="stylePerfil.css">
+    <link rel="stylesheet" href="estilos.css">
+
     <title>PetShop</title>
 </head>
 
@@ -23,7 +24,6 @@
                     <li><a href="index.html#contact">CONTÁCTANOS</a></li>
                 </ul>
             </div>
-            <button id="btn_inisesion">INICIAR SESION</button>
         </nav>
 
     </header>
@@ -32,25 +32,24 @@
         <h1>Mi Perfil</h1>
         <img class="bone" src="img/bone.png"></img>
         <rect2></rect2>
-        <!-- <tit> Historial de Compras</tit> -->
-        <opbx1></opbx1>
+        <!-- <opbx1></opbx1> -->
         <a href="histcompras.html#noh">
+            <opbx1 style="cursor: pointer;"></opbx1>
+        </a>
+        <a href="histcitas.html#noh">
             <opbx2 style="cursor: pointer;"></opbx2>
         </a>
-        <a href="histcitas.html#noh">
-            <opbx3 style="cursor: pointer;"></opbx3>
-        </a>
         <opbx4></opbx4>
-        <a href="#misdatos">
+        <!-- <a style="cursor: pointer;" href="#misdatos">
             <opt1>Mis datos</opt1>
+        </a> -->
+        <a style="cursor: pointer;" href="histcompras.html#noh">
+            <opt1>Historial de Compras</opt1>
         </a>
-        <a href="histcompras.html#noh">
-            <opt2>Historial de Compras</opt2>
+        <a style="cursor: pointer;" href="histcitas.html#noh">
+            <opt2>Historial de Citas</opt2>
         </a>
-        <a href="histcitas.html#noh">
-            <opt3>Historial de citas</opt3>
-        </a>
-        <a href="#cerrars">
+        <a style="cursor: pointer;" onclick="cerrarSesion()">
             <opt4>Cerrar Sesión</opt4>
         </a>
 
@@ -77,4 +76,12 @@
             <lm style="top: calc(13*100%/14 - 16px/2);">Snaps de descarte de Sida </lm>
         </section> -->
     </section>
+    <script>
+    
+    function cerrarSesion(){
+        localStorage.setItem("user", "");
+        window.location.href='/PetWorld-Web/inicioSesion.html';
+    }
+    </script>
 </body>
+</html>
