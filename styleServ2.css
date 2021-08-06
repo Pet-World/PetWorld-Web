@@ -181,6 +181,7 @@ bt {
 }
 
 r2:hover {
+    background-color: rgba(255, 168, 38, 0.9);
     transform: scale(0.98);
 }
 
@@ -310,9 +311,8 @@ recnt {
 
 g23 {
     position: absolute;
-    width: 104.34px;
     height: 317.68px;
-    left: 1350px;
+    left: 1250px;
     top: 175px;
     bottom: 13.54px;
 }
@@ -320,5 +320,5 @@ g23 {
 tServ {
     position: absolute;
     top: 84px;
-    left: 1050px;
+    left: 880px;
 }

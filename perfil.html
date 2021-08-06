@@ -32,25 +32,13 @@
         <h1>Mi Perfil</h1>
         <img class="bone" src="img/bone.png"></img>
         <rect2></rect2>
-        <!-- <opbx1></opbx1> -->
-        <a href="histcompras.html#noh">
-            <opbx1 style="cursor: pointer;"></opbx1>
-        </a>
-        <a href="histcitas.html#noh">
-            <opbx2 style="cursor: pointer;"></opbx2>
-        </a>
-        <opbx4></opbx4>
-        <!-- <a style="cursor: pointer;" href="#misdatos">
-            <opt1>Mis datos</opt1>
-        </a> -->
-        <a style="cursor: pointer;" href="histcompras.html#noh">
-            <opt1>Historial de Compras</opt1>
-        </a>
-        <a style="cursor: pointer;" href="histcitas.html#noh">
-            <opt2>Historial de Citas</opt2>
-        </a>
-        <a style="cursor: pointer;" onclick="cerrarSesion()">
-            <opt4>Cerrar Sesión</opt4>
+
+        <a id="opbx1" href="histcompras.html#noh" style="cursor: pointer;">Historial de Compras</a>
+
+        <a id="opbx2" href="histcitas.html#noh" style="cursor: pointer;">Historial de Citas</a>
+
+        <a id="opbx4" style="cursor: pointer;" onclick="cerrarSesion()">
+            Cerrar Sesión
         </a>
 
         <!-- <section id="lcitas">
@@ -77,11 +65,11 @@
         </section> -->
     </section>
     <script>
-    
-    function cerrarSesion(){
-        localStorage.setItem("user", "");
-        window.location.href='/PetWorld-Web/inicioSesion.html';
-    }
+        function cerrarSesion() {
+            localStorage.setItem("user", "");
+            window.location.href = '/PetWorld-Web/inicioSesion.html';
+        }
     </script>
 </body>
+
 </html>

@@ -124,13 +124,12 @@ t3 {
     position: absolute;
     width: 243px;
     height: 26px;
-    left: 70px;
+    left: 60px;
     font-family: DM Sans;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 26px;
-    /* identical to box height */
     letter-spacing: 0.12em;
     color: #FF7A00;
 }
@@ -182,6 +181,7 @@ bt {
 }
 
 r2:hover {
+    background-color: rgba(255, 168, 38, 0.9);
     transform: scale(0.98);
 }
 
@@ -325,9 +325,8 @@ recnt {
 
 g23 {
     position: absolute;
-    width: 104.34px;
     height: 317.68px;
-    left: 1350px;
+    left: 1250px;
     top: 175px;
     bottom: 13.54px;
 }
@@ -335,5 +334,5 @@ g23 {
 tServ {
     position: absolute;
     top: 84px;
-    left: 1050px;
+    left: 880px;
 }

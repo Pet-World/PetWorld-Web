@@ -12,6 +12,7 @@
     --bg-color: rgba(255, 122, 0);
     --marron: #62412F;
     --verde: #40b840;
+    --amarillo: rgba(255, 168, 38, 0.9);
 }
 
 #noh {
@@ -25,7 +26,7 @@ h1 {
     width: 459px;
     height: 36px;
     left: 131px;
-    top: 53px;
+    top: 18px;
     font-family: Germania One;
     font-style: normal;
     font-weight: normal;
@@ -44,7 +45,6 @@ rect {
     width: 429px;
     height: 68px;
     left: 0px;
-    top: 34px;
     background: rgba(255, 168, 38, 0.9);
     border-radius: 0px 15px 0px 0px;
     filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.25));
@@ -55,7 +55,7 @@ img.bone {
     width: 30px;
     height: 30px;
     left: 36px;
-    top: 56px;
+    top: 20px;
 }
 
 rect2 {
@@ -63,52 +63,83 @@ rect2 {
     width: 410px;
     height: 460px;
     left: calc(50% - 410px/2);
-    top: calc(205px - 14vh);
+    top: calc(205px - 25vh);
     background: rgba(255, 122, 0, 0.75);
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
 }
 
-
-opbx2 {
+#opbx2 {
     position: absolute;
     width: 368px;
     height: 86px;
     left: calc(50% - 368px/2);
-    top: calc(339px - 14vh);
+    top: calc(339px - 25vh);
+    background: #ffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    font-family: Germania One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #000000;
+    padding: 1.2em;
+}
+
+#opbx1 {
+    text-align: center;
+    position: absolute;
+    font-family: Germania One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 41px;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    letter-spacing: 0.08em;
+    color: #000000;
+    width: 368px;
+    height: 86px;
+    left: calc(50% - 368px/2);
+    top: calc(235px - 25vh);
     background: #ffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
 }
-opbx1 {
-    position: absolute;
-    width: 368px;
-    height: 86px;
-    left: calc(50% - 368px/2);
-    top: calc(235px - 14vh);
-    background: #ffff;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 14px;
+
+#opbx1,
+#opbx2,
+#opbx4 {
+    cursor: pointer;
+    transition: 0.3s;
 }
 
+#opbx1:hover,
+#opbx2:hover {
+    background-color: var(--verde);
+    color: #ffff;
+}
 
-opbx4 {
+#opbx4:hover {
+    background-color: #680101;
+    color: #ffff;
+}
+
+#opbx4 {
     position: absolute;
     width: 368px;
     height: 86px;
     left: calc(50% - 368px/2);
-    top: calc(547px - 14vh);
+    top: calc(547px - 25vh);
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
-}
-
-opt1 {
-    position: absolute;
-    width: 342px;
-    height: 52px;
-    left: calc(50% - 332px/2);
-    top: calc(252px - 14vh);
     font-family: Germania One;
     font-style: normal;
     font-weight: normal;
@@ -118,25 +149,8 @@ opt1 {
     align-items: center;
     text-align: center;
     letter-spacing: 0.08em;
-    color: #000000;
-}
-
-opt2 {
-    position: absolute;
-    width: 342px;
-    height: 52px;
-    left: calc(50% - 292px/2);
-    top: calc(355px - 14vh);
-    font-family: Germania One;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 35px;
-    line-height: 41px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.08em;
-    color: #000000;
+    color: #680101;
+    padding: 0 4.55rem;
 }
 
 opt3 {
@@ -159,18 +173,7 @@ opt3 {
 
 opt4 {
     position: absolute;
-    width: 223px;
     height: 33px;
     left: calc(50% - 223px/2);
     top: calc(573px - 14vh);
-    font-family: Germania One;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 35px;
-    line-height: 41px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.08em;
-    color: #680101;
 }

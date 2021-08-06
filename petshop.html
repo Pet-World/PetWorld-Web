@@ -129,7 +129,7 @@
                 </div>
             </div>
             <p id="importante"><span>IMPORTANTE : </span>Tomar en cuenta las condiciones y pasos para la solicitud, entrega y pago de un servicio</p>
-            <button  data-dismiss="modal" id="enviar" onclick="enviar()">ENVIAR</button>
+            <button data-dismiss="modal" id="enviar" onclick="enviar()">ENVIAR</button>
         </div>
     </div>
     <script>
@@ -392,7 +392,7 @@
                         div.appendChild(h6_precio_producto);
                         resumen.appendChild(div);
 
-                        precioTotal += precio;
+                        precioTotal += precio * cantidad;
                     }
                 }
                 total.value = String(parseFloat(precioTotal));
